@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance = null;
+    public bool DebugMode = true;
     public PlayerController PlayerController;
     public ShadowController ShadowController;
     
