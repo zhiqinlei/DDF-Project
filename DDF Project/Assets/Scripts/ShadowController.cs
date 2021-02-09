@@ -26,13 +26,13 @@ public class ShadowController : MonoBehaviour
     void LateUpdate()
     {
         Vector3 shadowPos = GetShadowPosition(LightSourceObj.transform.position, 
-                                        Player.gameObject.transform.position,
-                                        WallObj.transform.position);
+            Player.gameObject.transform.position,
+            WallObj.transform.position);
         transform.position = shadowPos;
         float targetHeight = GetShadowHeight(LightSourceObj.transform.position, 
-                                        Player.gameObject.transform.position,
-                                        WallObj.transform.position,
-                                        Player.Height);
+            Player.gameObject.transform.position,
+            WallObj.transform.position,
+            Player.Height);
 
         float currentHeight = GetComponent<Renderer>().bounds.size.y;
         Vector3 rescale = transform.localScale;

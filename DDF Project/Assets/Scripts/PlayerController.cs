@@ -18,8 +18,6 @@ public class PlayerController : MonoBehaviour
 
     #endregion
     [ReadOnly] public float Height;
-    [Required] public GameObject TopPosition;
-    [Required] public GameObject ButtonPosition;
     public int StartHealth = 4;
     [ReadOnly] [SerializeField] private int health;
     [Required] public ShadowController ShadowController;
