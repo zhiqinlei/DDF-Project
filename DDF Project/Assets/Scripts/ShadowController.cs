@@ -73,5 +73,4 @@ public class ShadowController : MonoBehaviour
         float lightToScreen = Mathf.Abs(screen.z - light.z);
         return lightToScreen / lightToPlayer * playerHeight;
     }
-
 }
