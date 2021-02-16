@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     public ShadowController ShadowController;
     public BulletManager BulletManager;
     public LightController LightController;
+    public HealthBarUIManager HealthBarUIManager;
+    public MonsterManager MonsterManager;
     
     void Awake()
     {
@@ -29,5 +31,9 @@ public class GameManager : MonoBehaviour
         ShadowController = FindObjectOfType<ShadowController>();
         BulletManager = FindObjectOfType<BulletManager>();
         LightController = FindObjectOfType<LightController>();
+        MonsterManager = FindObjectOfType<MonsterManager>();
+
+        // ui manager
+        HealthBarUIManager = FindObjectOfType<HealthBarUIManager>();
     }
 }
