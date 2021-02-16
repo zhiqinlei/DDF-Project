@@ -9,6 +9,9 @@ public class GameManager : MonoBehaviour
     public PlayerController PlayerController;
     public ShadowController ShadowController;
     public BulletManager BulletManager;
+    public LightController LightController;
+    public HealthBarUIManager HealthBarUIManager;
+    public MonsterManager MonsterManager;
     
     void Awake()
     {
@@ -22,10 +25,15 @@ public class GameManager : MonoBehaviour
         }
 
         // Dont destroy on reloading the scene
-        DontDestroyOnLoad(gameObject);
+        // DontDestroyOnLoad(gameObject);
 
         PlayerController = FindObjectOfType<PlayerController>();
         ShadowController = FindObjectOfType<ShadowController>();
         BulletManager = FindObjectOfType<BulletManager>();
+        LightController = FindObjectOfType<LightController>();
+        MonsterManager = FindObjectOfType<MonsterManager>();
+
+        // ui manager
+        HealthBarUIManager = FindObjectOfType<HealthBarUIManager>();
     }
 }

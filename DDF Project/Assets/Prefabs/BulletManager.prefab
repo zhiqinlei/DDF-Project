@@ -42,7 +42,7 @@ GameObject:
   m_Layer: 0
   m_Name: BulletGeneratePosition
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -54,7 +54,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8793130994254344442}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.69, y: 1.25, z: -0.2}
+  m_LocalPosition: {x: 3.2, y: 1.25, z: -0.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8793130995721264883}
@@ -74,7 +74,7 @@ GameObject:
   m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
-  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -142,7 +142,9 @@ MonoBehaviour:
   PositionBotton: {fileID: 8793130994563247027}
   BulletPrefab: {fileID: 948493552890736679, guid: 006478db85d744b75a38beed954acd67,
     type: 3}
-  ShootInterval: 1
+  ShootInterval: 2
+  BulletSpeed: 2
+  bulletList: []
 --- !u!1 &8793130995721264882
 GameObject:
   m_ObjectHideFlags: 0
@@ -155,7 +157,7 @@ GameObject:
   m_Layer: 0
   m_Name: Top
   m_TagString: Untagged
-  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1

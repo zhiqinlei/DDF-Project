@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
         gameManager = GameManager.Instance;
 
         health = StartHealth;
+        gameManager.HealthBarUIManager.Initialize(0, health);
         characterController = GetComponent<CharacterController>();
         rb = GetComponent<Rigidbody>();
 
@@ -53,5 +54,12 @@ public class PlayerController : MonoBehaviour
         transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
         characterController.Move(moveDirection * MoveSpeed * Time.deltaTime);
+    }
+
+    public void ReduceHealth(int value=1)
+    {
+        health -= value;
+        // update health bar
+        gameManager.HealthBarUIManager.SetHealth(health);
     }
 }

@@ -73,4 +73,13 @@ public class ShadowController : MonoBehaviour
         float lightToScreen = Mathf.Abs(screen.z - light.z);
         return lightToScreen / lightToPlayer * playerHeight;
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Monster")
+        {
+            Debug.Log("hit monster");
+            Player.ReduceHealth();
+        }
+    }
 }
