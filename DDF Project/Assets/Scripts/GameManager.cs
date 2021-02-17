@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
         }
 
         // Dont destroy on reloading the scene
-        DontDestroyOnLoad(gameObject);
+        // DontDestroyOnLoad(gameObject);
 
         PlayerController = FindObjectOfType<PlayerController>();
         ShadowController = FindObjectOfType<ShadowController>();
