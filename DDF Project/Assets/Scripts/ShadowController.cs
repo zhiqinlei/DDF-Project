@@ -81,5 +81,10 @@ public class ShadowController : MonoBehaviour
             Debug.Log("hit monster");
             Player.ReduceHealth();
         }
+        if (other.gameObject.tag == "Bullet")
+        {
+            Debug.Log("hit bullet");
+            Player.ReduceHealth();
+        }
     }
 }
