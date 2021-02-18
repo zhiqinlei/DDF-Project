@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
         gameManager = GameManager.Instance;
 
         health = StartHealth;
-        gameManager.HealthBarUIManager.Initialize(0, health);
+        gameManager.HealthBar.SetMaxHealth(health);
         characterController = GetComponent<CharacterController>();
         rb = GetComponent<Rigidbody>();
 
@@ -60,6 +60,6 @@ public class PlayerController : MonoBehaviour
     {
         health -= value;
         // update health bar
-        gameManager.HealthBarUIManager.SetHealth(health);
+        gameManager.HealthBar.SetHealth(health);
     }
 }
