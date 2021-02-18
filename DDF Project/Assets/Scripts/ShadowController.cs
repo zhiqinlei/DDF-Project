@@ -85,6 +85,7 @@ public class ShadowController : MonoBehaviour
         {
             Debug.Log("hit bullet");
             Player.ReduceHealth();
+            Destroy(other.gameObject);
         }
     }
 }
