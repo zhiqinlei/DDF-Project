@@ -9,9 +9,9 @@ public class BulletManager : MonoBehaviour
     [Required] public GameObject PositionTop;
     [Required] public GameObject PositionBotton;
     [Required] public GameObject BulletPrefab;
-    public float ShootInterval = 1.0f;
+    public float ShootInterval = 0.7f;
     private float tempShootInterval;
-    public float BulletSpeed = 2.0f;
+    public float BulletSpeed = 4.0f;
     [SerializeField] private List<BulletController> bulletList;
     private GameManager gameManager;
 

@@ -6,12 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Chenshu Xu Test Scenes/StartMenu.unity
+    path: Assets/Scenes/DDF Project/StartMenu.unity
     guid: a7728af04bcb94d5690e1e4511f3d572
   - enabled: 1
-    path: Assets/Scenes/Chenshu Xu Test Scenes/Chenshu's test scene.unity
+    path: Assets/Scenes/DDF Project/Game.unity
     guid: c23278377378b384ab2e247b789e1f6c
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/DDF Project/EndMenu.unity
+    guid: 984ca832cdc506f49a9ae1d9b167ac7f
   m_configObjects: {}
