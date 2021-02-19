@@ -67,4 +67,27 @@ public class PlayerController : MonoBehaviour
             FindObjectOfType<GameManager>().EndGame();
         }
     }
+
+    public void GetEat()
+    {
+        health -= 100;
+        // update health bar
+        gameManager.HealthBar.SetHealth(health);
+        // add game end condition
+        if (health <= 0)
+        {
+            FindObjectOfType<GameManager>().EndGame();
+        }
+    }
+
+    public void Eat(int value = 1)
+    {
+        if (health < StartHealth) // if not full health, get 1 more hp
+        {
+            health += 1;
+        }
+        
+        // update health bar
+        gameManager.HealthBar.SetHealth(health);
+    }
 }

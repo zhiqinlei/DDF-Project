@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public bool DebugMode = true;
     public PlayerController PlayerController;
     public ShadowController ShadowController;
+    public MonsterController MonsterController;
     public BulletManager BulletManager;
     public LightController LightController;
     //public HealthBarUIManager HealthBarUIManager;
@@ -31,6 +32,7 @@ public class GameManager : MonoBehaviour
 
         PlayerController = FindObjectOfType<PlayerController>();
         ShadowController = FindObjectOfType<ShadowController>();
+        MonsterController = FindObjectOfType<MonsterController>();
         BulletManager = FindObjectOfType<BulletManager>();
         LightController = FindObjectOfType<LightController>();
         MonsterManager = FindObjectOfType<MonsterManager>();
