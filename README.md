@@ -1,10 +1,8 @@
 # DDF-Project
 A 3D unity game 
 
-In an endless hell, Shadow monsters on the wall try to attack MC, but MC is not the target, its shadow is. 
+In an endless hell, there is nothing but emptiness and darkness. One day, you, a suffering lich, used your last power to create a light source. it is the first and only light in hell.
 
-The player controls the main character’s movement to adjust its shadow projection on the wall. 
+Where there is light, there is shadow. Not only that, there are shadow ghosts. Their only purpose is to enlarge themselves by taking your shadow.
 
-By moving away from the light source or moving to the light source, the main character can shrink shadow to avoid bullets or enlarge shadow to scare away shadow monsters.
-
-The longer the player survives,the more the game would become difficult and  the more points the player will get.
+Even without your life, you still own your body and knowledge. Moving to avoid little ghosts taking your shadow. When a big ghost shows up, always remember: "Even a very small lich can cast a very large shadow."
