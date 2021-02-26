@@ -4,28 +4,22 @@ using UnityEngine;
 
 public class LightController : MonoBehaviour
 {
-    public Transform target;
     public float speed;
-    public float Yspeed;
+    private GameManager gameManager;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
     // Update is called once per frame
     void Update()
     {
-    	transform.position += Vector3.up * Yspeed * Time.deltaTime;
-        if(transform.position.y>=2 || transform.position.y <= 0){
+    	transform.position += Vector3.left * speed * Time.deltaTime;
+        if(transform.position.x>=4 || transform.position.x <=-5 ){
 
-             Yspeed = -Yspeed;
+             speed = -speed;
         }
-
-        transform.RotateAround(target.position, Vector3.up, speed * Time.deltaTime);
-        if (transform.position.x>=2 || transform.position.x<=-2)
-            {
-                speed = -speed;
-            }
     }
+
 }
 
