@@ -7,24 +7,32 @@ public class LightSourceController : MonoBehaviour
 
 	//public GameObject obj;
     Light lightPoint;
-    public float index;
+    public float LightReduceIndex; // describes how fast the light goes off
+    public float FuelAddIndex; // describes how many intensity is add when eat a fuel
+    private GameManager gameManager;
     // Start is called before the first frame update
     void Start()
     {
+        gameManager = GameManager.Instance;
         lightPoint = this.GetComponent<Light>();
     }
 
     // Update is called once per frame
     void Update()
     {
-       LightOff();    
+        LightOff();    
     }
 
     private void LightOff(){
-        lightPoint.intensity -= index*Time.deltaTime;
+        lightPoint.intensity -= LightReduceIndex*Time.deltaTime;
 
-        if(lightPoint.intensity<=0.0){
+        if (lightPoint.intensity<=0.0){
             FindObjectOfType<GameManager>().EndGame();
         }
+    }
+
+    public void AddFuel()
+    {
+        lightPoint.intensity += FuelAddIndex;
     }
 }
