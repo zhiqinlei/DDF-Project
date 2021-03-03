@@ -12,14 +12,13 @@ public class BulletManager : MonoBehaviour
     public float ShootInterval = 0.7f;
     private float tempShootInterval;
     public float BulletSpeed = 4.0f;
-    [SerializeField] private List<BulletController> bulletList;
+    public float BulletExistingTime = 6.0f; // bullte will be destroied after certain seconds
     private GameManager gameManager;
 
     void Start()
     {
         gameManager = GameManager.Instance;
         tempShootInterval = ShootInterval;
-        bulletList = new List<BulletController>();
     }
 
     void Update()
@@ -42,7 +41,6 @@ public class BulletManager : MonoBehaviour
         // rotate on y axis -90 faceing left
         GameObject bulletObj = Instantiate(BulletPrefab, bulletStartPos, Quaternion.Euler(90, -90, 0) , BulletGroup.transform);
         BulletController bullet = bulletObj.GetComponent<BulletController>();
-        bullet.Initialize(BulletSpeed);
-        bulletList.Add(bullet);
+        bullet.Initialize(BulletSpeed, BulletExistingTime);
     }
 }

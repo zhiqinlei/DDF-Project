@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     [ReadOnly] public float Height;
     public int StartHealth = 4;
     [ReadOnly] [SerializeField] private int health;
+    [SerializeField] private int fuelNumber = 0;
     [Required] public ShadowController ShadowController;
     private GameManager gameManager;
 
@@ -54,6 +55,21 @@ public class PlayerController : MonoBehaviour
         transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
         characterController.Move(moveDirection * MoveSpeed * Time.deltaTime);
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        foreach (ContactPoint contact in collision.contacts)
+        {
+            Debug.DrawRay(contact.point, contact.normal, Color.white, 2.0f);
+        }
+        if (collision.gameObject.tag == "Fuel")
+        {
+            Debug.Log("hit fuel");
+            fuelNumber += 1;
+            gameManager.LightController.AddFuel();
+            Destroy(collision.gameObject);
+        }
     }
 
     public void ReduceHealth(int value=1)

@@ -1,31 +1,50 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using NaughtyAttributes;
 
 public class LightController : MonoBehaviour
 {
-    public Transform target;
+    [Required] public GameObject LightPosition;
+    [Required] public GameObject LightPositionLeft;
+    [Required] public GameObject LightPositionRight;
     public float speed;
-    public float Yspeed;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-    // Update is called once per frame
+    [Required] public Light lightPoint;
+    public float LightReduceIndex; // describes how fast the light goes off
+    public float FuelAddIndex; // describes how many intensity is add when eat a fuel
+
     void Update()
     {
-    	transform.position += Vector3.up * Yspeed * Time.deltaTime;
-        if(transform.position.y>=2 || transform.position.y <= 0){
+        LightOff();
+    }
 
-             Yspeed = -Yspeed;
+    void FixedUpdate()
+    {
+    	UpdatePosition();
+    }
+
+    private void UpdatePosition()
+    {
+        LightPosition.transform.position += Vector3.left * speed * Time.deltaTime;
+        if (LightPosition.transform.position.x >= LightPositionRight.transform.position.x || 
+            LightPosition.transform.position.x <= LightPositionLeft.transform.position.x )
+        {
+            speed = -speed;
         }
+    }
 
-        transform.RotateAround(target.position, Vector3.up, speed * Time.deltaTime);
-        if (transform.position.x>=2 || transform.position.x<=-2)
-            {
-                speed = -speed;
-            }
+    private void LightOff()
+    {
+        lightPoint.intensity -= LightReduceIndex*Time.deltaTime;
+
+        if (lightPoint.intensity<=0.0){
+            FindObjectOfType<GameManager>().EndGame();
+        }
+    }
+
+    public void AddFuel()
+    {
+        lightPoint.intensity += FuelAddIndex;
     }
 }
 

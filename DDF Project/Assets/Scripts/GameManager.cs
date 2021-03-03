@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public LightController LightController;
     //public HealthBarUIManager HealthBarUIManager;
     public MonsterManager MonsterManager;
+    public FuelManager FuelManager;
     public HealthBar HealthBar;
     
     void Awake()
@@ -36,6 +37,7 @@ public class GameManager : MonoBehaviour
         BulletManager = FindObjectOfType<BulletManager>();
         LightController = FindObjectOfType<LightController>();
         MonsterManager = FindObjectOfType<MonsterManager>();
+        FuelManager = FindObjectOfType<FuelManager>();
 
         // ui manager
         //HealthBarUIManager = FindObjectOfType<HealthBarUIManager>();
