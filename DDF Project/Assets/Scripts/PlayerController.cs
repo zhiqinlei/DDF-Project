@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Analytics;
 using NaughtyAttributes;
+
 
 public class PlayerController : MonoBehaviour
 {
@@ -80,6 +82,16 @@ public class PlayerController : MonoBehaviour
         // add game end condition
         if (health <= 0)
         {
+            //sent analyticsResult
+            AnalyticsResult analyticsResult = Analytics.CustomEvent(
+                "Game Over: Bullet hit",
+                new Dictionary<string, object> {
+                    {"Score", Score.GetScore() }
+                }
+            );
+            Debug.Log("analyticsResult: " + analyticsResult);
+            Debug.Log("die by bullet " + Score.GetScore() +"s");
+            //game over
             FindObjectOfType<GameManager>().EndGame();
         }
     }
@@ -92,6 +104,16 @@ public class PlayerController : MonoBehaviour
         // add game end condition
         if (health <= 0)
         {
+            //sent analyticsResult
+            AnalyticsResult analyticsResult = Analytics.CustomEvent(
+                "Game Over: Ghost eat",
+                new Dictionary<string, object> {
+                    {"Score", Score.GetScore() }
+                }
+            );
+            Debug.Log("analyticsResult: " + analyticsResult);
+            Debug.Log("die by ghost " + Score.GetScore() +"s");
+            //game over
             FindObjectOfType<GameManager>().EndGame();
         }
     }
