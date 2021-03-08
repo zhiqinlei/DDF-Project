@@ -678,10 +678,10 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  cloudProjectId: 
+  cloudProjectId: 5b6fa297-5796-4e98-8eac-7770252e088c
   framebufferDepthMemorylessMode: 0
-  projectName: 
-  organizationId: 
+  projectName: DDF Project
+  organizationId: zhiqinlei1998
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0

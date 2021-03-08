@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Analytics;
 using NaughtyAttributes;
 
 public class LightController : MonoBehaviour
@@ -38,6 +39,16 @@ public class LightController : MonoBehaviour
         lightPoint.intensity -= LightReduceIndex*Time.deltaTime;
 
         if (lightPoint.intensity<=0.0){
+            //sent analyticsResult
+            AnalyticsResult analyticsResult = Analytics.CustomEvent(
+                "Game Over: Light off",
+                new Dictionary<string, object> {
+                    {"Score", Score.GetScore() }
+                }
+            );
+            Debug.Log("analyticsResult: " + analyticsResult);
+            Debug.Log("die by darkness " + Score.GetScore() +"s");
+            //game over
             FindObjectOfType<GameManager>().EndGame();
         }
     }

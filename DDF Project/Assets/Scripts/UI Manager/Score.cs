@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Score : MonoBehaviour
 {
     public Text scoreText;
-    public float scoreAmount;
+    public static float scoreAmount;
     public float pointIncreasedPerSecond;
 
 
@@ -23,4 +23,9 @@ public class Score : MonoBehaviour
         scoreText.text = (int)scoreAmount + " S";
         scoreAmount += pointIncreasedPerSecond * Time.deltaTime;
     }
+
+    public static int GetScore() {
+        return (int)scoreAmount;
+    }
+
 }
