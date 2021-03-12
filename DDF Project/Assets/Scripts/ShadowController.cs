@@ -76,16 +76,18 @@ public class ShadowController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {   
-        float targetHeight = GetShadowHeight(LightSourceObj.transform.position, 
+        Vector3 shadowPos = GetShadowPosition(LightSourceObj.transform.position, 
             Player.gameObject.transform.position,
-            WallObj.transform.position,
-            Player.Height);
+            WallObj.transform.position);
 
         if (other.gameObject.tag == "Monster")
         {
             Debug.Log("hit monster");
+            Debug.Log("moster size: " + other.gameObject.transform.localScale.y);
+            Debug.Log("player size: "+ transform.localScale.y );
             // if shadow smaller than ghost size, geteat
-            if (targetHeight <= 2){
+            if (  transform.localScale.y <= other.gameObject.transform.localScale.y ){
+                
                 Player.GetEat();
             }
             // else eat the ghost
