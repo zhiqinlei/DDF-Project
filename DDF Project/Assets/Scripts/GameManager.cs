@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public MonsterManager MonsterManager;
     public FuelManager FuelManager;
     public HealthBar HealthBar;
+    public Score Score; 
     
     void Awake()
     {
@@ -42,11 +43,13 @@ public class GameManager : MonoBehaviour
         // ui manager
         //HealthBarUIManager = FindObjectOfType<HealthBarUIManager>();
         HealthBar = FindObjectOfType<HealthBar>();
+        // socre manager
+        Score = FindObjectOfType<Score>();
     }
 
     bool gameHasEnded = false;
 
-    public float restartDelay = 2f;
+    public float restartDelay = 1f;
 
     public void EndGame ()
     {

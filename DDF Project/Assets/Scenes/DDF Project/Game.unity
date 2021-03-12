@@ -1016,7 +1016,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 2027322838}
-  scoreAmount: 0
   pointIncreasedPerSecond: 1
 --- !u!1 &2087298024
 GameObject:
@@ -1205,8 +1204,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2138919232}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -6.87, y: 2.65, z: -5.021}
-  m_LocalScale: {x: 9.281548, y: 5, z: 0.1}
+  m_LocalPosition: {x: -6.86, y: 2.65, z: -5.021}
+  m_LocalScale: {x: 10, y: 5, z: 0.1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 10
@@ -1519,6 +1518,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1500956651, guid: 50a700ecdee314011a7c26acc1971139, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -12.61
+      objectReference: {fileID: 0}
     - target: {fileID: 1533407754477055817, guid: 50a700ecdee314011a7c26acc1971139,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1578,6 +1581,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MonsterManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 5761517254045667321, guid: 50a700ecdee314011a7c26acc1971139,
+        type: 3}
+      propertyPath: Maxsize
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5761517254045667321, guid: 50a700ecdee314011a7c26acc1971139,
+        type: 3}
+      propertyPath: Minsize
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5761517254045667321, guid: 50a700ecdee314011a7c26acc1971139,
+        type: 3}
+      propertyPath: maxsize
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5761517254045667321, guid: 50a700ecdee314011a7c26acc1971139,
+        type: 3}
+      propertyPath: minsize
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9032863262577373212, guid: 50a700ecdee314011a7c26acc1971139,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.58
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50a700ecdee314011a7c26acc1971139, type: 3}
@@ -1662,6 +1690,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: LightManager
       objectReference: {fileID: 0}
+    - target: {fileID: 5884029666037751708, guid: bce1d626711dc4df4a016ec686fe2b41,
+        type: 3}
+      propertyPath: LightReduceIndex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5884029666037751708, guid: bce1d626711dc4df4a016ec686fe2b41,
+        type: 3}
+      propertyPath: FuelAddIndex
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5884029666037751708, guid: bce1d626711dc4df4a016ec686fe2b41,
+        type: 3}
+      propertyPath: MaxIntensity
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5884029666037751708, guid: bce1d626711dc4df4a016ec686fe2b41,
+        type: 3}
+      propertyPath: MaxSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5884029666037751708, guid: bce1d626711dc4df4a016ec686fe2b41,
+        type: 3}
+      propertyPath: acceleration
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5884029666037751709, guid: bce1d626711dc4df4a016ec686fe2b41,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1717,6 +1770,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5884029666344736668, guid: bce1d626711dc4df4a016ec686fe2b41,
+        type: 3}
+      propertyPath: m_Range
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bce1d626711dc4df4a016ec686fe2b41, type: 3}
 --- !u!1001 &6080464088980462624
@@ -1726,6 +1784,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1518466576, guid: 588004f5016eb44af84877b3c5604192, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1518466576, guid: 588004f5016eb44af84877b3c5604192, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1893771849714761645, guid: 588004f5016eb44af84877b3c5604192,
         type: 3}
       propertyPath: m_LocalPosition.x

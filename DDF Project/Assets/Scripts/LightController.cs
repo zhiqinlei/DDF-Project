@@ -15,14 +15,20 @@ public class LightController : MonoBehaviour
     public float LightReduceIndex; // describes how fast the light goes off
     public float FuelAddIndex; // describes how many intensity is add when eat a fuel
 
+    public float acceleration;
+    public float MaxSpeed; // adjust speed
+    
+
     void Update()
     {
         LightOff();
     }
 
-    void FixedUpdate()
+    void FixedUpdate() // light source move
     {
-    	UpdatePosition();
+        if (Score.GetScore() >= 10){
+            UpdatePosition();
+        }
     }
 
     private void UpdatePosition()
@@ -32,6 +38,12 @@ public class LightController : MonoBehaviour
             LightPosition.transform.position.x <= LightPositionLeft.transform.position.x )
         {
             speed = -speed;
+        }
+
+        if (Score.GetScore() >= 20){
+            if(Mathf.Abs(speed)<=MaxSpeed){
+                speed+=acceleration*speed*0.001f;
+            }
         }
     }
 
