@@ -17,7 +17,7 @@ public class LightController : MonoBehaviour
 
     public float acceleration;
     public float MaxSpeed; // adjust speed
-    
+    public float LevelUpTime;
 
     void Update()
     {
@@ -27,6 +27,16 @@ public class LightController : MonoBehaviour
     void FixedUpdate() // light source move
     {
         if (Score.GetScore() >= 10){
+            //sent analyticsResult
+            AnalyticsResult analyticsResult = Analytics.CustomEvent(
+                "Light Source: Start Move",
+                new Dictionary<string, object> {
+                    {"Time", Score.GetScore() }
+                }
+            );
+            Debug.Log("analyticsResult: " + analyticsResult);
+            Debug.Log("light source start move ");
+            // start move
             UpdatePosition();
         }
     }
@@ -40,10 +50,21 @@ public class LightController : MonoBehaviour
             speed = -speed;
         }
 
-        if (Score.GetScore() >= 20){
+        if (Score.GetScore() == LevelUpTime){
             if(Mathf.Abs(speed)<=MaxSpeed){
-                speed+=acceleration*speed*0.001f;
+                speed+=acceleration*speed;
             }
+            //sent analyticsResult
+            AnalyticsResult analyticsResult = Analytics.CustomEvent(
+                "Light Source: Accelerate",
+                new Dictionary<string, object> {
+                    {"Time", Score.GetScore() }
+                }
+            );
+            Debug.Log("analyticsResult: " + analyticsResult);
+            Debug.Log("Light Source accelerate");
+
+            LevelUpTime += LevelUpTime;
         }
     }
 
