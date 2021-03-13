@@ -12,6 +12,9 @@ public class MonsterManager : MonoBehaviour
     public float ShowInterval = 0.7f;
     private float tempShowInterval;
     public float MonsterSpeed = 4.0f;
+    public float Size;
+    public float maxsize = 2.5f;
+    public float minsize = 1f;
     [SerializeField] private List<MonsterController> MonsterList;
     private GameManager gameManager;
 
@@ -30,12 +33,14 @@ public class MonsterManager : MonoBehaviour
         tempShowInterval -= Time.deltaTime;
         if (tempShowInterval <= 0)
         {
-            Show();
+            // random size
+            Size = Random.Range(minsize, maxsize);
+            Show(Size);
             tempShowInterval = Random.Range(ShowInterval/2, ShowInterval); //ghost will randomly showup
         }
     }
 
-    private void Show()
+    private void Show(float Size)
     {
         x = Random.Range(PositionTop.transform.position.x, PositionButton.transform.position.x);
 
@@ -57,9 +62,17 @@ public class MonsterManager : MonoBehaviour
         
         GameObject monsterObj = Instantiate(ShadowMonsterPrefab, monsterStartPos, Quaternion.Euler(dir, 90, 0) , MonsterGroup.transform); // randomly choose direction
         MonsterController monster = monsterObj.GetComponent<MonsterController>();
+
+        //randomly change size
+        Vector3 randomSize = new Vector3 (0, Size, Size);
+        monsterObj.transform.localScale = randomSize;
       
 
         monster.Initialize(MonsterSpeed);
         MonsterList.Add(monster);
+    }
+
+    public float getSize(){
+        return Size;
     }
 }
