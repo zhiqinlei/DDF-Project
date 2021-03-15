@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Analytics;
 using NaughtyAttributes;
 
 public class MonsterManager : MonoBehaviour
@@ -10,11 +11,19 @@ public class MonsterManager : MonoBehaviour
     [Required] public GameObject PositionButton;
     [Required] public GameObject ShadowMonsterPrefab;
     public float ShowInterval = 0.7f;
+    public float MinShowInterval;
     private float tempShowInterval;
+
     public float MonsterSpeed = 4.0f;
+    public float MaxMonsterSpeed;
+
     public float Size;
     public float maxsize = 2.5f;
     public float minsize = 1f;
+
+    public float acceleration;
+    public float LevelUpTime;
+
     [SerializeField] private List<MonsterController> MonsterList;
     private GameManager gameManager;
 
@@ -34,9 +43,37 @@ public class MonsterManager : MonoBehaviour
         if (tempShowInterval <= 0)
         {
             // random size
-            Size = Random.Range(minsize, maxsize);
+            Size = Random.Range(minsize, minsize + 1f);
             Show(Size);
             tempShowInterval = Random.Range(ShowInterval/2, ShowInterval); //ghost will randomly showup
+        }
+
+        // upgrade monster speed and size and reduce interval when level up
+        if (Score.GetScore() == LevelUpTime){
+            if (Mathf.Abs(ShowInterval) >= MinShowInterval){
+                ShowInterval -= acceleration*ShowInterval;
+            }
+            // bullet speed accelerate until max speed
+            if(Mathf.Abs(MonsterSpeed)<=MaxMonsterSpeed){
+                MonsterSpeed += acceleration*MonsterSpeed;
+            }
+
+            if(Mathf.Abs(minsize)<=maxsize){
+                minsize += acceleration*minsize;
+            }
+
+            //sent analyticsResult
+            AnalyticsResult analyticsResult = Analytics.CustomEvent(
+                "Monster: Upgrade",
+                new Dictionary<string, object> {
+                    {"Time", Score.GetScore() }
+                }
+            );
+            Debug.Log("analyticsResult: " + analyticsResult);
+            Debug.Log("Monster upgrade");
+
+            LevelUpTime += LevelUpTime;
+
         }
     }
 
