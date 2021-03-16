@@ -26,7 +26,7 @@ public class LightController : MonoBehaviour
 
     void FixedUpdate() // light source move
     {
-        if (Score.GetScore() >= 10){
+        if (Score.GetScore() >= 30){
             //sent analyticsResult
             AnalyticsResult analyticsResult = Analytics.CustomEvent(
                 "Light Source: Start Move",
