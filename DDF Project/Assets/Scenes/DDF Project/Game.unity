@@ -1602,6 +1602,31 @@ PrefabInstance:
       propertyPath: minsize
       value: 0.7
       objectReference: {fileID: 0}
+    - target: {fileID: 5761517254045667321, guid: 50a700ecdee314011a7c26acc1971139,
+        type: 3}
+      propertyPath: MinShowInterval
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5761517254045667321, guid: 50a700ecdee314011a7c26acc1971139,
+        type: 3}
+      propertyPath: MaxMonsterSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5761517254045667321, guid: 50a700ecdee314011a7c26acc1971139,
+        type: 3}
+      propertyPath: acceleration
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5761517254045667321, guid: 50a700ecdee314011a7c26acc1971139,
+        type: 3}
+      propertyPath: LevelUpTime
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5761517254045667321, guid: 50a700ecdee314011a7c26acc1971139,
+        type: 3}
+      propertyPath: MonsterSpeed
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 9032863262577373212, guid: 50a700ecdee314011a7c26acc1971139,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1693,7 +1718,7 @@ PrefabInstance:
     - target: {fileID: 5884029666037751708, guid: bce1d626711dc4df4a016ec686fe2b41,
         type: 3}
       propertyPath: LightReduceIndex
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5884029666037751708, guid: bce1d626711dc4df4a016ec686fe2b41,
         type: 3}
@@ -1708,7 +1733,7 @@ PrefabInstance:
     - target: {fileID: 5884029666037751708, guid: bce1d626711dc4df4a016ec686fe2b41,
         type: 3}
       propertyPath: MaxSpeed
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5884029666037751708, guid: bce1d626711dc4df4a016ec686fe2b41,
         type: 3}
@@ -1719,6 +1744,11 @@ PrefabInstance:
         type: 3}
       propertyPath: LevelUpTime
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5884029666037751708, guid: bce1d626711dc4df4a016ec686fe2b41,
+        type: 3}
+      propertyPath: speed
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5884029666037751709, guid: bce1d626711dc4df4a016ec686fe2b41,
         type: 3}
@@ -2024,6 +2054,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8793130994906373715, guid: 93435ee550afa4b2d9f750c65628e2fb,
+        type: 3}
+      propertyPath: acceleration
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8793130994906373715, guid: 93435ee550afa4b2d9f750c65628e2fb,
+        type: 3}
+      propertyPath: LevelUpTime
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8793130994906373715, guid: 93435ee550afa4b2d9f750c65628e2fb,
+        type: 3}
+      propertyPath: MinShootInterval
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8793130994906373715, guid: 93435ee550afa4b2d9f750c65628e2fb,
+        type: 3}
+      propertyPath: MaxBulletSpeed
+      value: 5.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93435ee550afa4b2d9f750c65628e2fb, type: 3}
