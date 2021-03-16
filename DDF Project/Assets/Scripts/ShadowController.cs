@@ -83,8 +83,6 @@ public class ShadowController : MonoBehaviour
         if (other.gameObject.tag == "Monster")
         {
             Debug.Log("hit monster");
-            Debug.Log("moster size: " + other.gameObject.transform.localScale.y);
-            Debug.Log("player size: "+ transform.localScale.y );
             // if shadow smaller than ghost size, geteat
             if (  transform.localScale.y <= other.gameObject.transform.localScale.y ){
                 

@@ -1713,7 +1713,12 @@ PrefabInstance:
     - target: {fileID: 5884029666037751708, guid: bce1d626711dc4df4a016ec686fe2b41,
         type: 3}
       propertyPath: acceleration
-      value: 1
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 5884029666037751708, guid: bce1d626711dc4df4a016ec686fe2b41,
+        type: 3}
+      propertyPath: LevelUpTime
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5884029666037751709, guid: bce1d626711dc4df4a016ec686fe2b41,
         type: 3}
