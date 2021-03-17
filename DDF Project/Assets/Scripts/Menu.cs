@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Menu : MonoBehaviour
 {
+
     public void PlayGame ()
     {
     	SceneManager.LoadScene ("Game");
@@ -20,4 +22,5 @@ public class Menu : MonoBehaviour
     {
     	GameObject.Find("Canvas/menu/UI").SetActive(true);
     }
+
 }
