@@ -5,10 +5,13 @@ using UnityEngine;
 public class FuelController : MonoBehaviour
 {
     public float m_ExistingTime;
+    
+    
 
     public void Initialize(float existingTime)
     {
         m_ExistingTime = existingTime;
+        
     }
 
     void Update()
@@ -18,5 +21,8 @@ public class FuelController : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        
+
     }
 }
