@@ -24,7 +24,7 @@ RenderSettings:
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 1
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.5
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.23310378, g: 0.20694795, b: 0.11621217, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1785,10 +1785,40 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5884029665082960905, guid: bce1d626711dc4df4a016ec686fe2b41,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5884029665082960905, guid: bce1d626711dc4df4a016ec686fe2b41,
+        type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5884029665082960905, guid: bce1d626711dc4df4a016ec686fe2b41,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bc3c216b525965d48a88b0ce353aff5f, type: 2}
     - target: {fileID: 5884029665082960910, guid: bce1d626711dc4df4a016ec686fe2b41,
         type: 3}
       propertyPath: m_TagString
       value: LightSource
+      objectReference: {fileID: 0}
+    - target: {fileID: 5884029665082960911, guid: bce1d626711dc4df4a016ec686fe2b41,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.145
+      objectReference: {fileID: 0}
+    - target: {fileID: 5884029665378197480, guid: bce1d626711dc4df4a016ec686fe2b41,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 5884029665510499802, guid: bce1d626711dc4df4a016ec686fe2b41,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.16
       objectReference: {fileID: 0}
     - target: {fileID: 5884029666037751699, guid: bce1d626711dc4df4a016ec686fe2b41,
         type: 3}
@@ -1833,7 +1863,7 @@ PrefabInstance:
     - target: {fileID: 5884029666037751708, guid: bce1d626711dc4df4a016ec686fe2b41,
         type: 3}
       propertyPath: LightReduceIndex
-      value: 0.2
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 5884029666037751709, guid: bce1d626711dc4df4a016ec686fe2b41,
         type: 3}
@@ -1890,6 +1920,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5884029666344736659, guid: bce1d626711dc4df4a016ec686fe2b41,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.919
+      objectReference: {fileID: 0}
     - target: {fileID: 5884029666344736668, guid: bce1d626711dc4df4a016ec686fe2b41,
         type: 3}
       propertyPath: m_Type
@@ -1903,7 +1938,7 @@ PrefabInstance:
     - target: {fileID: 5884029666344736668, guid: bce1d626711dc4df4a016ec686fe2b41,
         type: 3}
       propertyPath: m_Intensity
-      value: 13
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5884029666344736668, guid: bce1d626711dc4df4a016ec686fe2b41,
         type: 3}
@@ -1913,7 +1948,7 @@ PrefabInstance:
     - target: {fileID: 5884029666344736668, guid: bce1d626711dc4df4a016ec686fe2b41,
         type: 3}
       propertyPath: m_Lightmapping
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5884029666344736668, guid: bce1d626711dc4df4a016ec686fe2b41,
         type: 3}
@@ -1996,6 +2031,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlayerGroup
+      objectReference: {fileID: 0}
+    - target: {fileID: 6080464089295992703, guid: 588004f5016eb44af84877b3c5604192,
+        type: 3}
+      propertyPath: Gravity
+      value: 270
+      objectReference: {fileID: 0}
+    - target: {fileID: 6080464089295992703, guid: 588004f5016eb44af84877b3c5604192,
+        type: 3}
+      propertyPath: JumpSpeed
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 6080464089511710327, guid: 588004f5016eb44af84877b3c5604192,
         type: 3}

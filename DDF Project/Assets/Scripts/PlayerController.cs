@@ -11,9 +11,9 @@ public class PlayerController : MonoBehaviour
     [ReadOnly] [SerializeField] private CharacterController characterController;
     [ReadOnly] [SerializeField] private Rigidbody rb;
     public float MoveSpeed = 5.0f;
-    public float JumpSpeed = 5.0f;
+    public float JumpSpeed = 20.0f;
     public float RotationSpeed = 240.0f;
-    public float Gravity = 20.0f; // weight
+    public float Gravity = 200.0f; // weight
     private Vector3 moveDirection = Vector3.zero;
     public float turnSmoothTime = 0.1f;
     private float turnSmoothVelocity;
