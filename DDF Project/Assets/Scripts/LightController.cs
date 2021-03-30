@@ -73,10 +73,10 @@ public class LightController : MonoBehaviour
     {
         //lightPoint.intensity -= LightReduceIndex*Time.deltaTime;
         //reduce range when time goes on
-        lightPoint.range -= LightReduceIndex*Time.deltaTime*0.3f;
+        lightPoint.range -= LightReduceIndex*Time.deltaTime;
 
         //if (lightPoint.intensity<=0.0){
-        if (lightPoint.range<=0.0){
+        if (lightPoint.range<= 7f){
             //sent analyticsResult
             AnalyticsResult analyticsResult = Analytics.CustomEvent(
                 "Game Over: Light off",
@@ -98,7 +98,7 @@ public class LightController : MonoBehaviour
 
             //lightPoint.intensity += FuelAddIndex;
             // enlarge range too
-            lightPoint.range += FuelAddIndex*0.5f;
+            lightPoint.range += FuelAddIndex;
         }
     }
 }
