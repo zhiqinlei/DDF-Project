@@ -301,7 +301,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 255015388}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.779, y: 2.65, z: -8.86}
+  m_LocalPosition: {x: -0.779, y: 2.65, z: -11.19}
   m_LocalScale: {x: 12.6104145, y: 5, z: 0.1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -393,6 +393,12 @@ Transform:
 --- !u!1 &596748634 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5884029665145385742, guid: bce1d626711dc4df4a016ec686fe2b41,
+    type: 3}
+  m_PrefabInstance: {fileID: 5884029664582195796}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &596748635 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5884029665145385743, guid: bce1d626711dc4df4a016ec686fe2b41,
     type: 3}
   m_PrefabInstance: {fileID: 5884029664582195796}
   m_PrefabAsset: {fileID: 0}
@@ -498,7 +504,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1104769006}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.23, z: 0.84}
+  m_LocalPosition: {x: 0, y: 1.19, z: 1.15}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 1821784880}
@@ -517,9 +523,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ObjectHolder: {fileID: 1104769007}
-  ThrowForce: 100
+  ThrowForce: 500
   carryObject: 0
   IsThrowable: 0
+  LightSource: {fileID: 596748635}
 --- !u!23 &1104769009
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1826,6 +1833,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5884029665082960910, guid: bce1d626711dc4df4a016ec686fe2b41,
+        type: 3}
+      propertyPath: m_TagString
+      value: LightSource
+      objectReference: {fileID: 0}
     - target: {fileID: 5884029666037751699, guid: bce1d626711dc4df4a016ec686fe2b41,
         type: 3}
       propertyPath: m_Name
@@ -2038,6 +2050,11 @@ PrefabInstance:
       propertyPath: ObjectHolder
       value: 
       objectReference: {fileID: 1104769007}
+    - target: {fileID: 8672453715893329600, guid: 343c6c68bc58c4b4880e59581a2b504c,
+        type: 3}
+      propertyPath: FuelExistingTime
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8672453715893329601, guid: 343c6c68bc58c4b4880e59581a2b504c,
         type: 3}
       propertyPath: m_RootOrder

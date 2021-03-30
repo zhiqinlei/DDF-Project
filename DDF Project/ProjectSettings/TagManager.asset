@@ -9,6 +9,7 @@ TagManager:
   - Fuel
   - object
   - Holder
+  - LightSource
   layers:
   - Default
   - TransparentFX
