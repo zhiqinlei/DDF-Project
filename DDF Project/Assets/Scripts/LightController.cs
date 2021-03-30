@@ -93,9 +93,9 @@ public class LightController : MonoBehaviour
     {
         if (lightPoint.intensity <= MaxIntensity){
 
-        lightPoint.intensity += FuelAddIndex;
-        // enlarge range too
-        lightPoint.range += FuelAddIndex*0.5f;
+            lightPoint.intensity += FuelAddIndex*0.5f;
+            // enlarge range too
+            lightPoint.range += FuelAddIndex*0.5f;
         }
     }
 }
