@@ -88,8 +88,10 @@ public class ShadowController : MonoBehaviour
                 
                 Player.GetEat();
             }
+            else{
             // else eat the ghost
-            Player.Eat();
+               Player.Eat();
+            }
             Destroy(other.gameObject);
         }
         if (other.gameObject.tag == "Bullet")

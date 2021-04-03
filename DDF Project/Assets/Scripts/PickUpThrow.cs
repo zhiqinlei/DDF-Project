@@ -13,6 +13,9 @@ public class PickUpThrow : MonoBehaviour
     public Transform LightSource;
     private GameManager gameManager;
 
+    public AudioSource Music;
+    public AudioClip MusicThrow;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -89,11 +92,14 @@ public class PickUpThrow : MonoBehaviour
         {
             if (IsThrowable)
             {
+                Music.clip = MusicThrow;
+                Music.Play();
                 ObjectHolder.DetachChildren();
                 Item.GetComponent<Rigidbody>().isKinematic = false;
                 Item.GetComponent<Rigidbody>().useGravity = true;
                 //Item.GetComponent<Rigidbody>().AddRelativeForce(transform.forward * ThrowForce);
                 Item.GetComponent<Rigidbody>().AddForce(transform.forward * ThrowForce);
+
             }
 
             carryObject = false;

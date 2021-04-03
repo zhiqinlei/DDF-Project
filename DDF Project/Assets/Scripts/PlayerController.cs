@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
 
     public AudioSource Music;
     public AudioClip MusicJump;
+    public AudioClip MusicRestore;
+    public AudioClip MusicDamage;
 
     #endregion
     [ReadOnly] public float Height;
@@ -85,6 +87,9 @@ public class PlayerController : MonoBehaviour
         health -= value;
         // update health bar
         gameManager.HealthBar.SetHealth(health);
+
+        Music.clip = MusicDamage;
+        Music.Play();
         // add game end condition
         if (health <= 0)
         {
@@ -108,6 +113,9 @@ public class PlayerController : MonoBehaviour
         health -= 100;
         // update health bar
         gameManager.HealthBar.SetHealth(health);
+
+        Music.clip = MusicDamage;
+        Music.Play();
         // add game end condition
         if (health <= 0)
         {
@@ -134,5 +142,7 @@ public class PlayerController : MonoBehaviour
         
         // update health bar
         gameManager.HealthBar.SetHealth(health);
+        Music.clip = MusicRestore;
+        Music.Play();
     }
 }
