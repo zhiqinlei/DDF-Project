@@ -18,6 +18,9 @@ public class PlayerController : MonoBehaviour
     public float turnSmoothTime = 0.1f;
     private float turnSmoothVelocity;
 
+    public AudioSource Music;
+    public AudioClip MusicJump;
+
     #endregion
     [ReadOnly] public float Height;
     public int StartHealth = 4;
@@ -48,6 +51,8 @@ public class PlayerController : MonoBehaviour
         if (characterController.isGrounded && Input.GetButton("Jump"))
         {
             moveDirection.y = JumpSpeed;
+            Music.clip = MusicJump;
+            Music.Play();
         }
         moveDirection.y -= Gravity * Time.deltaTime;
 
@@ -84,6 +89,7 @@ public class PlayerController : MonoBehaviour
         if (health <= 0)
         {
             //sent analyticsResult
+
             AnalyticsResult analyticsResult = Analytics.CustomEvent(
                 "Game Over: Bullet hit",
                 new Dictionary<string, object> {
