@@ -25,7 +25,19 @@ public class PickUpThrow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Item = GameObject.FindGameObjectWithTag("Fuel");
+        //Item = GameObject.FindGameObjectWithTag("Fuel");
+        // change to items
+
+        GameObject[] Items = GameObject.FindGameObjectsWithTag("Fuel");
+        foreach (GameObject item in Items)
+        {
+            if (carryObject!= true)
+            {
+                Item = item;
+            }
+            
+        }
+
         if(Item == null)
         {
             return;
@@ -42,7 +54,7 @@ public class PickUpThrow : MonoBehaviour
             float dist = Vector3.Distance(ObjectHolder.transform.position, Item.transform.position);
             {
                 //if(hit.collider.tag == "Fuel")
-                if (dist < 1.5f)
+                if (dist < 1.7f)
                 {
                     carryObject = true;
                     IsThrowable = true;

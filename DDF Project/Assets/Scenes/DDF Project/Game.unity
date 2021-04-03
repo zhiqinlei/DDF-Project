@@ -2321,7 +2321,7 @@ PrefabInstance:
     - target: {fileID: 8672453715893329600, guid: 343c6c68bc58c4b4880e59581a2b504c,
         type: 3}
       propertyPath: FuelGenerateInterval
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8672453715893329601, guid: 343c6c68bc58c4b4880e59581a2b504c,
         type: 3}
