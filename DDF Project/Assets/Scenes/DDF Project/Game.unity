@@ -571,7 +571,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectHolder: {fileID: 1104769007}
   ThrowForce: 500
-  carryObject: 0
   IsThrowable: 0
   LightSource: {fileID: 596748635}
   Music: {fileID: 1176041049}
@@ -2092,7 +2091,7 @@ PrefabInstance:
     - target: {fileID: 5884029666344736668, guid: bce1d626711dc4df4a016ec686fe2b41,
         type: 3}
       propertyPath: m_Shadows.m_Type
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bce1d626711dc4df4a016ec686fe2b41, type: 3}

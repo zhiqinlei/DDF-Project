@@ -286,15 +286,18 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Use W, A, S, D to control the movement.
+  m_text: 'Use W, A, S, D and space to control the movement.
 
 
-    Shrink your shadow to avoid
-    little ghost above. Enlarge your shadow to eat shadow ghost  from two sides.
+    Shrink your shadow
+    to avoid little ghost above. Enlarge your shadow to eat shadow ghost  from two
+    sides.
 
 
-    Keep
-    adding fuels into light source.'
+    Press LeftShift to Pick up & Throw fuels on the ground. Keep adding
+    fuels into light source to keep your survive.
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}

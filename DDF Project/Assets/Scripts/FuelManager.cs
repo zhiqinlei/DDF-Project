@@ -20,7 +20,7 @@ public class FuelManager : MonoBehaviour
     void Start()
     {
         // add a fuel at the beginning 
-        GenerateFuel();
+        //GenerateFuel();
 
         tempFuelGenerateInterval = FuelGenerateInterval;
     }
