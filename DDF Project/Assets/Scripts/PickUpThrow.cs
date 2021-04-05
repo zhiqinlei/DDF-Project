@@ -41,6 +41,15 @@ public class PickUpThrow : MonoBehaviour
                 Item = item;
             }
 
+            if(Item == null)
+            {
+                // when Item get destoryed, set carryObject & IsThrowable to false
+                cd = 0f;
+                carryObject = false;
+                IsThrowable = false;
+                return;
+            }
+
             // add fuel
             float d = Vector3.Distance(Item.transform.position, LightSource.transform.position);
             if (d < 1.3f)
@@ -48,7 +57,9 @@ public class PickUpThrow : MonoBehaviour
                 Debug.Log("add fuel");
                 gameManager.LightController.AddFuel();
                 Destroy(Item);
+                return;
             }
+
             
         }
 
@@ -60,6 +71,8 @@ public class PickUpThrow : MonoBehaviour
             IsThrowable = false;
             return;
         }
+
+        
         
         
 
@@ -68,6 +81,8 @@ public class PickUpThrow : MonoBehaviour
             //RaycastHit hit;
             //Ray directionRay = new Ray(transform.position, transform.forward);
             //if(Physics.Raycast(directionRay, out hit, 0f))
+
+            
             
             
             float dist = Vector3.Distance(ObjectHolder.transform.position, Item.transform.position);
