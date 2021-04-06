@@ -5,7 +5,6 @@ using NaughtyAttributes;
 
 public class ShadowController : MonoBehaviour
 {
-    [ReadOnly] [SerializeField] private CharacterController characterController;
     [Required] public PlayerController Player;
     [Required] public GameObject LightSourceObj;
     [Required] public GameObject WallObj;
@@ -15,7 +14,6 @@ public class ShadowController : MonoBehaviour
     void Start()
     {
         gameManager = GameManager.Instance;
-        characterController = GetComponent<CharacterController>();
 
         if (!LightSourceObj || !WallObj || !Player)
         {
@@ -62,7 +60,7 @@ public class ShadowController : MonoBehaviour
         float dY = lightToScreen / lightToPlayer * lightToPlayerOnY;
         result.y = light.y - dY;
 
-        result.z = screen.z - 0.2f;
+        result.z = screen.z + 0.2f;
 
         return result;
     }
@@ -88,8 +86,10 @@ public class ShadowController : MonoBehaviour
                 
                 Player.GetEat();
             }
+            else{
             // else eat the ghost
-            Player.Eat();
+               Player.Eat();
+            }
             Destroy(other.gameObject);
         }
         if (other.gameObject.tag == "Bullet")
