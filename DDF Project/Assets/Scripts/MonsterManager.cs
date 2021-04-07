@@ -93,7 +93,7 @@ public class MonsterManager : MonoBehaviour
         }
         Vector3 monsterStartPos = new Vector3(
             x, //randomly choose a start position
-            PositionButton.transform.position.y,
+            PositionButton.transform.position.y - (float) 1.25 + Size,
             PositionButton.transform.position.z);
         
         

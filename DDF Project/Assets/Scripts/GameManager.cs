@@ -15,8 +15,12 @@ public class GameManager : MonoBehaviour
     //public HealthBarUIManager HealthBarUIManager;
     public MonsterManager MonsterManager;
     public FuelManager FuelManager;
+    public BlockManager BlockManager;
     public HealthBar HealthBar;
     public Score Score; 
+
+    public AudioSource Music;
+    public AudioClip MusicEnd;
     
     void Awake()
     {
@@ -39,6 +43,7 @@ public class GameManager : MonoBehaviour
         LightController = FindObjectOfType<LightController>();
         MonsterManager = FindObjectOfType<MonsterManager>();
         FuelManager = FindObjectOfType<FuelManager>();
+        BlockManager = FindObjectOfType<BlockManager>();
 
         // ui manager
         //HealthBarUIManager = FindObjectOfType<HealthBarUIManager>();
@@ -54,10 +59,12 @@ public class GameManager : MonoBehaviour
     public void EndGame ()
     {
         if (gameHasEnded == false)
-        {
+        {   
             gameHasEnded = true;
             Debug.Log("Game Over");
             Invoke("Restart", restartDelay);
+            Music.clip = MusicEnd;
+            Music.Play();
         }
     }
 

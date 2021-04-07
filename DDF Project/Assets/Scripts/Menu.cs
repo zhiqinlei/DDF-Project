@@ -18,9 +18,9 @@ public class Menu : MonoBehaviour
     	Application.Quit();
     }
 
-    public void EnableUI()
-    {
-    	GameObject.Find("Canvas/menu/UI").SetActive(true);
-    }
+    //public void EnableUI()
+    //{
+    //	GameObject.Find("Canvas/menu").SetActive(true);
+    //}
 
 }

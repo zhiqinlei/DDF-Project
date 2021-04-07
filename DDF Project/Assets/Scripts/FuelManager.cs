@@ -15,9 +15,13 @@ public class FuelManager : MonoBehaviour
     public float FuelGenerateInterval = 5.0f; // every certain seconds, generate a fuel
     private float tempFuelGenerateInterval;
     public bool AutoGenerateFuel = true; // turn off if want to use other things to trigger generating action
+    
 
     void Start()
     {
+        // add a fuel at the beginning 
+        //GenerateFuel();
+
         tempFuelGenerateInterval = FuelGenerateInterval;
     }
 
@@ -29,9 +33,11 @@ public class FuelManager : MonoBehaviour
             if (tempFuelGenerateInterval <= 0.0f)
             {
                 GenerateFuel();
+                
                 tempFuelGenerateInterval = FuelGenerateInterval;
             }
         }
+       
     }
 
     public void GenerateFuel()
