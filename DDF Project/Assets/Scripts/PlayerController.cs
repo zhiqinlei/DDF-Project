@@ -7,33 +7,28 @@ using NaughtyAttributes;
 
 public class PlayerController : MonoBehaviour
 {
-    //#region Movement Settings
-    //[ReadOnly] [SerializeField] private CharacterController characterController;
-    //[ReadOnly] [SerializeField] private Rigidbody rb;
-
-    //public float MoveSpeed = 5.0f;
-    //public float JumpSpeed = 20.0f;
-    //public float RotationSpeed = 240.0f;
-    //public float Gravity = 200.0f; // weight
-    //private Vector3 moveDirection = Vector3.zero;
-    //private Vector3 moveDirection;
-    //public float turnSmoothTime = 0.1f;
-    //private float turnSmoothVelocity;
+    public CharacterController characterController;
+    public float MoveSpeed;
+    public float JumpSpeed;
+    public float RotationSpeed;
+    public float GravityValue = -9.81f;
+    private float gravity;
+    private Vector3 moveVector;
+    private Vector3 gravityVector;
+    public float turnSmoothTime;
+    private float turnSmoothVelocity;
 
     public AudioSource Music;
     public AudioClip MusicJump;
     public AudioClip MusicRestore;
     public AudioClip MusicDamage;
 
-    //#endregion
     [ReadOnly] public float Height;
     public int StartHealth = 4;
     [ReadOnly] [SerializeField] private int health;
     //[SerializeField] private int fuelNumber = 0;
     [Required] public ShadowController ShadowController;
     private GameManager gameManager;
-
-    
 
     void Start()
     {
@@ -47,6 +42,32 @@ public class PlayerController : MonoBehaviour
         Height = GetComponent<Renderer>().bounds.size.y;
 
         
+    }
+
+    void Update()
+    {
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Vertical");
+        moveVector = new Vector3(-horizontal, 0f, -vertical).normalized;
+    }
+
+    void FixedUpdate()
+    {
+        if (characterController.isGrounded && Input.GetButton("Jump"))
+        {
+            // moveVector.y = JumpSpeed;
+            moveVector.y = JumpSpeed;
+            Music.clip = MusicJump;
+            Music.Play();
+        }
+
+        Vector3 gravityVector = Vector3.up * GravityValue * Time.deltaTime;
+        characterController.Move(moveVector * MoveSpeed * Time.deltaTime + gravityVector);
+        
+        // rotation
+        float targetAngle = Mathf.Atan2(moveVector.x, moveVector.z) * Mathf.Rad2Deg;
+        float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
+        transform.rotation = Quaternion.Euler(0f, angle, 0f);
     }
 
 

@@ -39,6 +39,14 @@ public class MonsterManager : MonoBehaviour
 
     void Update()
     {
+        if (gameManager.GameMode == GameManager.Mode.Normal)
+        {
+            NormalGameModeLoop();
+        }
+    }
+
+    private void NormalGameModeLoop()
+    {
         tempShowInterval -= Time.deltaTime;
         if (tempShowInterval <= 0)
         {

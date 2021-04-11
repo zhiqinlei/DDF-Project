@@ -5,8 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public enum Mode {
+        Normal,
+        Tutorial,
+        Endless
+    };
     public static GameManager Instance = null;
     public bool DebugMode = true;
+    public Mode GameMode;
+    public Camera MainCamera;
     public PlayerController PlayerController;
     public ShadowController ShadowController;
     public MonsterController MonsterController;
@@ -35,7 +42,7 @@ public class GameManager : MonoBehaviour
 
         // Dont destroy on reloading the scene
         // DontDestroyOnLoad(gameObject);
-
+        MainCamera = FindObjectOfType<Camera>();
         PlayerController = FindObjectOfType<PlayerController>();
         ShadowController = FindObjectOfType<ShadowController>();
         MonsterController = FindObjectOfType<MonsterController>();
@@ -56,7 +63,7 @@ public class GameManager : MonoBehaviour
 
     public float restartDelay = 1f;
 
-    public void EndGame ()
+    public void EndGame()
     {
         if (gameHasEnded == false)
         {   
@@ -68,7 +75,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void Restart ()
+    void Restart()
     {
         SceneManager.LoadScene("EndMenu");
     }

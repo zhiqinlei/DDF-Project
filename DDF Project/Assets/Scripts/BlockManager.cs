@@ -16,13 +16,23 @@ public class BlockManager : MonoBehaviour
     private float tempBlockGenerateInterval;
     public float Size;
     public bool AutoGenerateBlock = true; 
+    private GameManager gameManager;
 
     void Start()
     {
+        gameManager = GameManager.Instance;
         tempBlockGenerateInterval = BlockGenerateInterval;
     }
 
     void Update()
+    {
+        if (gameManager.GameMode == GameManager.Mode.Normal)
+        {
+            NormalGameModeLoop();
+        }
+    }
+
+    private void NormalGameModeLoop()
     {
         if (AutoGenerateBlock)
         {

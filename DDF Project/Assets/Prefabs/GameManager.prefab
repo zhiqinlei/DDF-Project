@@ -46,4 +46,14 @@ MonoBehaviour:
   DebugMode: 1
   PlayerController: {fileID: 0}
   ShadowController: {fileID: 0}
+  MonsterController: {fileID: 0}
   BulletManager: {fileID: 0}
+  LightController: {fileID: 0}
+  MonsterManager: {fileID: 0}
+  FuelManager: {fileID: 0}
+  BlockManager: {fileID: 0}
+  HealthBar: {fileID: 0}
+  Score: {fileID: 0}
+  Music: {fileID: 0}
+  MusicEnd: {fileID: 8300000, guid: 3407f31040d4990458e87927705232a8, type: 3}
+  restartDelay: 1

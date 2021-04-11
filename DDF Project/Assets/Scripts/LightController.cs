@@ -19,14 +19,24 @@ public class LightController : MonoBehaviour
     public float acceleration;
     public float MaxSpeed; // adjust speed
     public float LevelUpTime;
+    private GameManager gameManager;
 
-    void Update()
+    void Start()
     {
-        LightOff();
+        gameManager = GameManager.Instance;
     }
 
     void FixedUpdate() // light source move
     {
+        if (gameManager.GameMode == GameManager.Mode.Normal)
+        {
+            NormalGameModeLoop();
+        }
+    }
+
+    private void NormalGameModeLoop()
+    {
+        LightOff();
         if (Score.GetScore() >= 30){
             //sent analyticsResult
             AnalyticsResult analyticsResult = Analytics.CustomEvent(

@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8672453715624417445}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.5, y: 0, z: -7.09}
+  m_LocalPosition: {x: -5.5, y: 0, z: -6.17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8672453716938522491}
@@ -112,8 +112,8 @@ MonoBehaviour:
   FuelGroup: {fileID: 8672453716702229000}
   FuelPrefab: {fileID: 7340749591998571161, guid: 35608476a3162468dae2cf6db3b1ec9d,
     type: 3}
-  FuelExistingTime: 4
-  FuelGenerateInterval: 5
+  FuelExistingTime: 10
+  FuelGenerateInterval: 7
   AutoGenerateFuel: 1
 --- !u!1 &8672453716400302806
 GameObject:
@@ -139,7 +139,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8672453716400302806}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.48, y: 0, z: -7.71}
+  m_LocalPosition: {x: -5.48, y: 0, z: -6.15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8672453716938522491}
@@ -169,7 +169,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8672453716480550628}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.9, y: 0, z: -7.07}
+  m_LocalPosition: {x: 3.98, y: 0, z: -6.08}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8672453716938522491}
@@ -229,7 +229,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8672453716938522490}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 2.74, y: 0.14, z: 7.29}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8672453716480550629}

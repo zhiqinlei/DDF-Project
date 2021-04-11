@@ -15,17 +15,26 @@ public class FuelManager : MonoBehaviour
     public float FuelGenerateInterval = 5.0f; // every certain seconds, generate a fuel
     private float tempFuelGenerateInterval;
     public bool AutoGenerateFuel = true; // turn off if want to use other things to trigger generating action
-    
+    private GameManager gameManager;
 
     void Start()
     {
         // add a fuel at the beginning 
         //GenerateFuel();
-
+        gameManager = GameManager.Instance;
         tempFuelGenerateInterval = FuelGenerateInterval;
     }
 
     void Update()
+    {
+        if (gameManager.GameMode == GameManager.Mode.Normal)
+        {
+            NormalGameModeLoop();
+        }
+       
+    }
+
+    private void NormalGameModeLoop()
     {
         if (AutoGenerateFuel)
         {
@@ -37,10 +46,9 @@ public class FuelManager : MonoBehaviour
                 tempFuelGenerateInterval = FuelGenerateInterval;
             }
         }
-       
     }
 
-    public void GenerateFuel()
+    public Vector3 GenerateFuel()
     {
         Vector3 startPos = new Vector3(
             Random.Range(XRangeMin.transform.position.x, XRangeMax.transform.position.x),
@@ -50,5 +58,6 @@ public class FuelManager : MonoBehaviour
         GameObject fuelObj = Instantiate(FuelPrefab, startPos, Quaternion.identity, FuelGroup.transform);
         FuelController fuel = fuelObj.GetComponent<FuelController>();
         fuel.Initialize(FuelExistingTime);
+        return startPos;
     }
 }

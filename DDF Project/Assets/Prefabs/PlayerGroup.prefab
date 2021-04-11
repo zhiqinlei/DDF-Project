@@ -1,5 +1,117 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1104769006
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1104769007}
+  - component: {fileID: 1104769010}
+  - component: {fileID: 1104769009}
+  - component: {fileID: 1104769011}
+  - component: {fileID: 1104769008}
+  m_Layer: 0
+  m_Name: holder
+  m_TagString: Holder
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1104769007
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1104769006}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.19, z: 1.15}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_Children: []
+  m_Father: {fileID: 6080464089295992697}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &1104769010
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1104769006}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &1104769009
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1104769006}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!65 &1104769011
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1104769006}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1104769008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1104769006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a4f3093455dbdf428dd68f95e0c3394, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectHolder: {fileID: 1104769007}
+  ThrowForce: 500
+  IsThrowable: 0
+  LightSource: {fileID: 0}
+  Music: {fileID: 0}
+  MusicThrow: {fileID: 8300000, guid: 538d669c3ac982f41b477e5e7a3e955e, type: 3}
 --- !u!1 &4001445896835740004
 GameObject:
   m_ObjectHideFlags: 0
@@ -28,6 +140,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6080464089511710321}
+  - {fileID: 6080464089295992697}
   - {fileID: 754153064629693449}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -43,12 +156,12 @@ GameObject:
   - component: {fileID: 754153064629693449}
   - component: {fileID: 7346470698485036735}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: MC_Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &754153064629693449
 Transform:
   m_ObjectHideFlags: 0
@@ -59,10 +172,9 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.252, y: 0.538, z: -1.648}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
-  m_Children:
-  - {fileID: 6080464089295992697}
+  m_Children: []
   m_Father: {fileID: 1893771849714761645}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7346470698485036735
 MonoBehaviour:
@@ -71,19 +183,19 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5742337142235128070}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a346fd77f8bc750469cf05f1afb08bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   characterController: {fileID: 6080464089295992702}
   MoveSpeed: 5
-  JumpSpeed: 20
+  JumpSpeed: 80
   RotationSpeed: 240
-  Gravity: 200
+  Gravity: 500
   turnSmoothTime: 0.1
   Music: {fileID: 0}
-  MusicJump: {fileID: 0}
+  MusicJump: {fileID: 8300000, guid: f62327b09015a95419577b7a3d230203, type: 3}
 --- !u!1 &6080464088834122878
 GameObject:
   m_ObjectHideFlags: 0
@@ -156,14 +268,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6080464089295992696}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.011408865, y: -0.016000032, z: -0.007999897}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.24629557, y: 0.53, z: -1.652}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 6080464090669968191}
   - {fileID: 6080464088834122879}
-  m_Father: {fileID: 754153064629693449}
-  m_RootOrder: 0
+  - {fileID: 1104769007}
+  m_Father: {fileID: 1893771849714761645}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6080464089295992700
 MeshFilter:
@@ -242,10 +355,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615ddf8716458024eb0a228e4e2a698b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterController: {fileID: 6080464089295992702}
+  MoveSpeed: 5
+  JumpSpeed: 10
+  RotationSpeed: 240
+  GravityValue: -9.81
+  turnSmoothTime: 0.1
   Music: {fileID: 0}
-  MusicJump: {fileID: 0}
-  MusicRestore: {fileID: 0}
-  MusicDamage: {fileID: 0}
+  MusicJump: {fileID: 8300000, guid: f62327b09015a95419577b7a3d230203, type: 3}
+  MusicRestore: {fileID: 8300000, guid: 1c33ee4bedbcd744a9a2e1935f548bb4, type: 3}
+  MusicDamage: {fileID: 8300000, guid: cf6a68477fa97044d9375657d50bb992, type: 3}
   Height: 0
   StartHealth: 4
   health: 0
@@ -278,8 +397,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6080464089511710320}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.21, y: 0.97, z: -0.2}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.21, y: 1.61, z: -5.06}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0}
   m_Children: []
   m_Father: {fileID: 1893771849714761645}
@@ -358,7 +477,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cbce178c979f294cbb09b5226e8011a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterController: {fileID: 0}
   Player: {fileID: 6080464089295992703}
   LightSourceObj: {fileID: 0}
   WallObj: {fileID: 0}
@@ -374,7 +492,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
