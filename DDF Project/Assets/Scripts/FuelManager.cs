@@ -11,6 +11,8 @@ public class FuelManager : MonoBehaviour
     [Required] public GameObject ZRangeMin;
     [Required] public GameObject FuelGroup; // fuel object generate position
     [Required] public GameObject FuelPrefab;
+    [Required] public GameObject FuelShadowGroup;
+    [Required] public GameObject FuelShadowPrefab;
     public float FuelExistingTime = 4.0f;
     public float FuelGenerateInterval = 5.0f; // every certain seconds, generate a fuel
     private float tempFuelGenerateInterval;
@@ -57,7 +59,10 @@ public class FuelManager : MonoBehaviour
         );
         GameObject fuelObj = Instantiate(FuelPrefab, startPos, Quaternion.identity, FuelGroup.transform);
         FuelController fuel = fuelObj.GetComponent<FuelController>();
-        fuel.Initialize(FuelExistingTime);
+        GameObject fuelShadowObj = Instantiate(FuelShadowPrefab, FuelShadowGroup.transform);
+        FuelShadowController shadow = fuelShadowObj.GetComponent<FuelShadowController>();
+        fuel.Initialize(FuelExistingTime, shadow);
+        shadow.Initialize(fuel);
         return startPos;
     }
 }

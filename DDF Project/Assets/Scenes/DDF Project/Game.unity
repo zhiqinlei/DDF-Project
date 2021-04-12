@@ -1535,9 +1535,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4983865374162301450, guid: 049699e9761ca4077a67f5cf8e4fb015,
         type: 3}
+      propertyPath: Wall
+      value: 
+      objectReference: {fileID: 1746049236273809}
+    - target: {fileID: 4983865374162301450, guid: 049699e9761ca4077a67f5cf8e4fb015,
+        type: 3}
       propertyPath: Music
       value: 
       objectReference: {fileID: 1176041049}
+    - target: {fileID: 4983865374162301450, guid: 049699e9761ca4077a67f5cf8e4fb015,
+        type: 3}
+      propertyPath: NotDieMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4983865374162301451, guid: 049699e9761ca4077a67f5cf8e4fb015,
         type: 3}
       propertyPath: m_RootOrder

@@ -2,16 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using NaughtyAttributes;
 
 public class GameManager : MonoBehaviour
 {
     public enum Mode {
         Normal,
         Tutorial,
-        Endless
+        Test
     };
     public static GameManager Instance = null;
     public bool DebugMode = true;
+    public bool NotDieMode = false;
     public Mode GameMode;
     public Camera MainCamera;
     public PlayerController PlayerController;
@@ -24,10 +26,11 @@ public class GameManager : MonoBehaviour
     public FuelManager FuelManager;
     public BlockManager BlockManager;
     public HealthBar HealthBar;
-    public Score Score; 
+    public Score Score;
+    [Required] public GameObject Wall;
 
-    public AudioSource Music;
-    public AudioClip MusicEnd;
+    [Required] public AudioSource Music;
+    [Required] public AudioClip MusicEnd;
     
     void Awake()
     {
@@ -65,13 +68,16 @@ public class GameManager : MonoBehaviour
 
     public void EndGame()
     {
-        if (gameHasEnded == false)
-        {   
-            gameHasEnded = true;
-            Debug.Log("Game Over");
-            Invoke("Restart", restartDelay);
-            Music.clip = MusicEnd;
-            Music.Play();
+        if (NotDieMode)
+        {
+            if (gameHasEnded == false)
+            {   
+                gameHasEnded = true;
+                Debug.Log("Game Over");
+                Invoke("Restart", restartDelay);
+                Music.clip = MusicEnd;
+                Music.Play();
+            }
         }
     }
 
