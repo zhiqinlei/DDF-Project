@@ -51,7 +51,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7340749591998571161}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -109,6 +109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ExistingTime: 0
+  Shadow: {fileID: 0}
 --- !u!54 &349854759402881487
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -206,6 +207,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: fueltank
+      objectReference: {fileID: 0}
+    - target: {fileID: 5372226380091656792, guid: 754c343570f64cd4a9e6469d831b6b22,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8341241951009662953, guid: 754c343570f64cd4a9e6469d831b6b22,
         type: 3}

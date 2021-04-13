@@ -437,12 +437,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5884029664582195796}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &596748635 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5884029665145385743, guid: bce1d626711dc4df4a016ec686fe2b41,
-    type: 3}
-  m_PrefabInstance: {fileID: 5884029664582195796}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &785861077
 GameObject:
   m_ObjectHideFlags: 0
@@ -572,8 +566,6 @@ MonoBehaviour:
   ObjectHolder: {fileID: 1104769007}
   ThrowForce: 500
   IsThrowable: 0
-  LightSource: {fileID: 596748635}
-  Music: {fileID: 1176041049}
   MusicThrow: {fileID: 8300000, guid: 538d669c3ac982f41b477e5e7a3e955e, type: 3}
 --- !u!23 &1104769009
 MeshRenderer:
@@ -1775,6 +1767,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4983865374162301450, guid: 049699e9761ca4077a67f5cf8e4fb015,
+        type: 3}
+      propertyPath: Wall
+      value: 
+      objectReference: {fileID: 1746049236273809}
     - target: {fileID: 4983865374162301450, guid: 049699e9761ca4077a67f5cf8e4fb015,
         type: 3}
       propertyPath: Music
