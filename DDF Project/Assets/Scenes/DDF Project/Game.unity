@@ -390,18 +390,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 14.092001, y: 179.029, z: -0.09900001}
---- !u!1 &596748634 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5884029665145385742, guid: bce1d626711dc4df4a016ec686fe2b41,
-    type: 3}
-  m_PrefabInstance: {fileID: 5884029664582195796}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &596748635 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5884029665145385743, guid: bce1d626711dc4df4a016ec686fe2b41,
-    type: 3}
-  m_PrefabInstance: {fileID: 5884029664582195796}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &785861077
 GameObject:
   m_ObjectHideFlags: 0
@@ -1543,11 +1531,6 @@ PrefabInstance:
       propertyPath: Music
       value: 
       objectReference: {fileID: 1176041049}
-    - target: {fileID: 4983865374162301450, guid: 049699e9761ca4077a67f5cf8e4fb015,
-        type: 3}
-      propertyPath: NotDieMode
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4983865374162301451, guid: 049699e9761ca4077a67f5cf8e4fb015,
         type: 3}
       propertyPath: m_RootOrder
@@ -1686,14 +1669,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1104769008, guid: 588004f5016eb44af84877b3c5604192, type: 3}
-      propertyPath: Music
-      value: 
-      objectReference: {fileID: 1176041049}
-    - target: {fileID: 1104769008, guid: 588004f5016eb44af84877b3c5604192, type: 3}
-      propertyPath: LightSource
-      value: 
-      objectReference: {fileID: 596748635}
     - target: {fileID: 1893771849714761645, guid: 588004f5016eb44af84877b3c5604192,
         type: 3}
       propertyPath: m_RootOrder
@@ -1754,26 +1729,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerGroup
       objectReference: {fileID: 0}
-    - target: {fileID: 6080464089295992703, guid: 588004f5016eb44af84877b3c5604192,
-        type: 3}
-      propertyPath: Music
-      value: 
-      objectReference: {fileID: 1176041049}
-    - target: {fileID: 6080464089511710327, guid: 588004f5016eb44af84877b3c5604192,
-        type: 3}
-      propertyPath: WallObj
-      value: 
-      objectReference: {fileID: 1746049236273809}
-    - target: {fileID: 6080464089511710327, guid: 588004f5016eb44af84877b3c5604192,
-        type: 3}
-      propertyPath: LightSourceObj
-      value: 
-      objectReference: {fileID: 596748634}
-    - target: {fileID: 7346470698485036735, guid: 588004f5016eb44af84877b3c5604192,
-        type: 3}
-      propertyPath: Music
-      value: 
-      objectReference: {fileID: 1176041049}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 588004f5016eb44af84877b3c5604192, type: 3}
 --- !u!1001 &7671097588714479477

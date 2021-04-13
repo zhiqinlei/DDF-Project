@@ -50,19 +50,24 @@ public class FuelManager : MonoBehaviour
         }
     }
 
-    public Vector3 GenerateFuel()
+    public GameObject GenerateFuel()
     {
         Vector3 startPos = new Vector3(
             Random.Range(XRangeMin.transform.position.x, XRangeMax.transform.position.x),
             FuelGroup.transform.position.y,
             Random.Range(ZRangeMin.transform.position.z, ZRangeMax.transform.position.z)
         );
+        return GenerateFuel(startPos);
+    }
+
+    public GameObject GenerateFuel(Vector3 startPos)
+    {
         GameObject fuelObj = Instantiate(FuelPrefab, startPos, Quaternion.identity, FuelGroup.transform);
         FuelController fuel = fuelObj.GetComponent<FuelController>();
         GameObject fuelShadowObj = Instantiate(FuelShadowPrefab, FuelShadowGroup.transform);
         FuelShadowController shadow = fuelShadowObj.GetComponent<FuelShadowController>();
         fuel.Initialize(FuelExistingTime, shadow);
         shadow.Initialize(fuel);
-        return startPos;
+        return fuelObj;
     }
 }

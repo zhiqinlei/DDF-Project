@@ -6,13 +6,15 @@ using NaughtyAttributes;
 public class ShadowController : MonoBehaviour
 {
     [Required] public PlayerController Player;
-    [Required] public GameObject LightSourceObj;
-    [Required] public GameObject WallObj;
+    public GameObject LightSourceObj;
+    public GameObject WallObj;
     private GameManager gameManager;
 
     void Start()
     {
         gameManager = GameManager.Instance;
+        LightSourceObj = gameManager.LightController.LightPosition;
+        WallObj = gameManager.Wall;
 
         if (!LightSourceObj || !WallObj || !Player)
         {

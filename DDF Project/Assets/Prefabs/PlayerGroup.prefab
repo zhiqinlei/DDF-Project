@@ -109,8 +109,6 @@ MonoBehaviour:
   ObjectHolder: {fileID: 1104769007}
   ThrowForce: 500
   IsThrowable: 0
-  LightSource: {fileID: 0}
-  Music: {fileID: 0}
   MusicThrow: {fileID: 8300000, guid: 538d669c3ac982f41b477e5e7a3e955e, type: 3}
 --- !u!1 &4001445896835740004
 GameObject:

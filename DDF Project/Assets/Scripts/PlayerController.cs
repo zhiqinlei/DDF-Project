@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
         //rb = GetComponent<Rigidbody>();
 
         Height = GetComponent<Renderer>().bounds.size.y;
-
+        Music = gameManager.Music;
         
     }
 

@@ -60,6 +60,8 @@ public class GameManager : MonoBehaviour
         HealthBar = FindObjectOfType<HealthBar>();
         // socre manager
         Score = FindObjectOfType<Score>();
+
+        Music = FindObjectOfType<AudioSource>();
     }
 
     bool gameHasEnded = false;
@@ -68,16 +70,13 @@ public class GameManager : MonoBehaviour
 
     public void EndGame()
     {
-        if (NotDieMode)
-        {
-            if (gameHasEnded == false)
-            {   
-                gameHasEnded = true;
-                Debug.Log("Game Over");
-                Invoke("Restart", restartDelay);
-                Music.clip = MusicEnd;
-                Music.Play();
-            }
+        if (gameHasEnded == false)
+        {   
+            gameHasEnded = true;
+            Debug.Log("Game Over");
+            Invoke("Restart", restartDelay);
+            Music.clip = MusicEnd;
+            Music.Play();
         }
     }
 
