@@ -21,7 +21,7 @@ public class BlockManager : MonoBehaviour
     void Start()
     {
         gameManager = GameManager.Instance;
-        tempBlockGenerateInterval = BlockGenerateInterval;
+        tempBlockGenerateInterval = BlockGenerateInterval + 10;
     }
 
     void Update()
@@ -47,8 +47,8 @@ public class BlockManager : MonoBehaviour
 
     public void GenerateBlock()
     {
-        Size = Random.Range(1f, 3.5f);
-        Vector3 randomSize = new Vector3 (Size, 1f, Size);
+        Size = Random.Range(2.5f, 5.5f);
+        Vector3 randomSize = new Vector3 (Size, 1.5f, 0.6f);
         Vector3 startPos = new Vector3(
             Random.Range(XRangeMin.transform.position.x, XRangeMax.transform.position.x),
             BlockGroup.transform.position.y,
