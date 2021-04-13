@@ -555,7 +555,7 @@ Transform:
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 1821784880}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1104769008
 MonoBehaviour:
@@ -1750,6 +1750,12 @@ PrefabInstance:
       propertyPath: MinShowInterval
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 5761517254045667321, guid: 50a700ecdee314011a7c26acc1971139,
+        type: 3}
+      propertyPath: ShadowMonsterPrefab
+      value: 
+      objectReference: {fileID: 2561932738374642701, guid: e267368fd41c34db1a447ac74476beff,
+        type: 3}
     - target: {fileID: 7152955275330813880, guid: 50a700ecdee314011a7c26acc1971139,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -2042,6 +2048,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1893771849714761645, guid: 588004f5016eb44af84877b3c5604192,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1893771849714761645, guid: 588004f5016eb44af84877b3c5604192,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1893771849714761645, guid: 588004f5016eb44af84877b3c5604192,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1893771849714761645, guid: 588004f5016eb44af84877b3c5604192,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.67
       objectReference: {fileID: 0}
@@ -2099,6 +2120,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MC_Controller
+      objectReference: {fileID: 0}
+    - target: {fileID: 6080464088834122879, guid: 588004f5016eb44af84877b3c5604192,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6080464089295992703, guid: 588004f5016eb44af84877b3c5604192,
         type: 3}
@@ -2190,6 +2216,11 @@ PrefabInstance:
       propertyPath: LightSourceObj
       value: 
       objectReference: {fileID: 596748634}
+    - target: {fileID: 6080464090669968191, guid: 588004f5016eb44af84877b3c5604192,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7346470698485036735, guid: 588004f5016eb44af84877b3c5604192,
         type: 3}
       propertyPath: Music
@@ -2518,6 +2549,12 @@ PrefabInstance:
       propertyPath: LevelUpTime
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 8793130994906373715, guid: 93435ee550afa4b2d9f750c65628e2fb,
+        type: 3}
+      propertyPath: BulletPrefab
+      value: 
+      objectReference: {fileID: 948493552890736679, guid: 006478db85d744b75a38beed954acd67,
+        type: 3}
     - target: {fileID: 8793130994906373715, guid: 93435ee550afa4b2d9f750c65628e2fb,
         type: 3}
       propertyPath: acceleration
