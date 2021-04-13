@@ -54,7 +54,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4861549541196084812}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 2.71, y: 0.17, z: 9.88}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1200420382757874829}
@@ -103,6 +103,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5878663593792209937}
+  - component: {fileID: 331618166}
   m_Layer: 0
   m_Name: BlockManager
   m_TagString: Untagged
@@ -126,6 +127,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &331618166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7552920130967370524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69e5c2fd4ec6c4fdab5e9d9da5cf4c0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  XRangeMax: {fileID: 9124247865125770323}
+  XRangeMin: {fileID: 6903084846815767102}
+  ZRangeMax: {fileID: 8923460785266032912}
+  ZRangeMin: {fileID: 8293432467397893649}
+  BlockGroup: {fileID: 2552937980485806369}
+  BlockPrefab: {fileID: 3399104368093805537, guid: 1dd663ef2439046c592ddc1af5a8e94f,
+    type: 3}
+  BlockExistingTime: 5
+  BlockGenerateInterval: 5
+  Size: 0
+  AutoGenerateBlock: 1
 --- !u!1 &8293432467397893649
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,7 +234,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9124247865125770323}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.9, y: 0, z: -7.07}
+  m_LocalPosition: {x: 3.98, y: 0, z: -7.07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7864505593477089046}

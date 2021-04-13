@@ -6,14 +6,15 @@ using NaughtyAttributes;
 public class ShadowController : MonoBehaviour
 {
     [Required] public PlayerController Player;
-    [Required] public GameObject LightSourceObj;
-    [Required] public GameObject WallObj;
-    private float targetHeight;
+    public GameObject LightSourceObj;
+    public GameObject WallObj;
     private GameManager gameManager;
 
     void Start()
     {
         gameManager = GameManager.Instance;
+        LightSourceObj = gameManager.LightController.LightPosition;
+        WallObj = gameManager.Wall;
 
         if (!LightSourceObj || !WallObj || !Player)
         {
@@ -39,7 +40,7 @@ public class ShadowController : MonoBehaviour
         transform.localScale = rescale;
     }
 
-    private Vector3 GetShadowPosition(Vector3 light, Vector3 player, Vector3 screen)
+    public static Vector3 GetShadowPosition(Vector3 light, Vector3 player, Vector3 screen)
     {
         float lightToPlayer = Mathf.Abs(player.z - light.z);
         float lightToPlayerOnX = light.x - player.x;
@@ -65,7 +66,7 @@ public class ShadowController : MonoBehaviour
         return result;
     }
 
-    private float GetShadowHeight(Vector3 light, Vector3 player, Vector3 screen, float playerHeight)
+    public static float GetShadowHeight(Vector3 light, Vector3 player, Vector3 screen, float playerHeight)
     {
         float lightToPlayer = Mathf.Abs(player.z - light.z);
         float lightToScreen = Mathf.Abs(screen.z - light.z);

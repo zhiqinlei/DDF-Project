@@ -19,7 +19,12 @@ public class Movement : MonoBehaviour
 
     public AudioSource Music;
     public AudioClip MusicJump;
+    private GameManager gameManager;
     
+    void Start()
+    {
+        Music = gameManager.Music;
+    }
 
     // Update is called once per frame
     void Update()

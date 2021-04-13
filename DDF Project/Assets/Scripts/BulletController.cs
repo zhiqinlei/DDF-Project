@@ -5,24 +5,36 @@ using NaughtyAttributes;
 
 public class BulletController : MonoBehaviour
 {
-    private float m_Speed;
-    public float m_ExistingTime;
+    public float mSpeed;
+    public float ExistingTime;
+    public float tempSpeed;
 
     public void Initialize(float speed, float existingTime)
     {
-        m_Speed = speed;
-        m_ExistingTime = existingTime;
+        mSpeed = speed;
+        ExistingTime = existingTime;
     }
 
     void Update()
     {
         Vector3 moveDirection = transform.forward;
-        transform.position += moveDirection * m_Speed * Time.deltaTime;
+        transform.position += moveDirection * mSpeed * Time.deltaTime;
 
-        m_ExistingTime -= Time.deltaTime;
-        if (m_ExistingTime <= 0.0f)
+        ExistingTime -= Time.deltaTime;
+        if (ExistingTime <= 0.0f)
         {
             Destroy(gameObject);
         }
+    }
+
+    public void PauseMovement()
+    {
+        tempSpeed = mSpeed;
+        mSpeed = 0;
+    }
+
+    public void ResumeMovement()
+    {
+        mSpeed = tempSpeed;
     }
 }

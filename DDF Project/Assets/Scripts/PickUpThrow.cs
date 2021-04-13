@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using NaughtyAttributes;
 
 public class PickUpThrow : MonoBehaviour
 {
@@ -10,11 +11,11 @@ public class PickUpThrow : MonoBehaviour
     private GameObject Item;
     public bool IsThrowable;
     // add light source
-    public Transform LightSource;
+    private GameObject LightSource;
     private GameManager gameManager;
 
-    public AudioSource Music;
-    public AudioClip MusicThrow;
+    private AudioSource Music;
+    [Required] public AudioClip MusicThrow;
 
     private float cd = 0f;// cd of pick&throw
 
@@ -23,6 +24,8 @@ public class PickUpThrow : MonoBehaviour
     {
         //Item = GameObject.FindGameObjectWithTag("Fuel");
         gameManager = GameManager.Instance;
+        LightSource = gameManager.LightController.LightPosition;
+        Music = gameManager.Music;
     }
 
     

@@ -39,6 +39,14 @@ public class MonsterManager : MonoBehaviour
 
     void Update()
     {
+        if (gameManager.GameMode == GameManager.Mode.Normal)
+        {
+            NormalGameModeLoop();
+        }
+    }
+
+    private void NormalGameModeLoop()
+    {
         tempShowInterval -= Time.deltaTime;
         if (tempShowInterval <= 0)
         {
@@ -77,36 +85,36 @@ public class MonsterManager : MonoBehaviour
         }
     }
 
-    private void Show(float Size)
+    public GameObject Show(float size)
     {
         x = Random.Range(PositionTop.transform.position.x, PositionButton.transform.position.x);
 
-        if (x < (PositionButton.transform.position.x + PositionTop.transform.position.x)/2 ) // born left
+        if (x < (PositionButton.transform.position.x + PositionTop.transform.position.x)/2 ) // born right
         {
             x = PositionTop.transform.position.x;
             dir = 0;
         }
-        else // born right
+        else // born left
         {
             x = PositionButton.transform.position.x;
             dir = 180;
         }
         Vector3 monsterStartPos = new Vector3(
             x, //randomly choose a start position
-            PositionButton.transform.position.y - (float) 1.25 + Size,
+            PositionButton.transform.position.y - (float) 1.25 + size,
             PositionButton.transform.position.z);
         
-        
-        GameObject monsterObj = Instantiate(ShadowMonsterPrefab, monsterStartPos, Quaternion.Euler(dir, 90, 0) , MonsterGroup.transform); // randomly choose direction
+        return Show(size, monsterStartPos, dir);
+    }
+
+    public GameObject Show(float size, Vector3 startPos, float dir)
+    {
+        GameObject monsterObj = Instantiate(ShadowMonsterPrefab, startPos, Quaternion.Euler(dir, 90, 0) , MonsterGroup.transform); // randomly choose direction
         MonsterController monster = monsterObj.GetComponent<MonsterController>();
-
-        //randomly change size
-        Vector3 randomSize = new Vector3 (0, Size, Size);
-        monsterObj.transform.localScale = randomSize;
-      
-
+        monsterObj.transform.localScale = new Vector3 (0, size, size);
         monster.Initialize(MonsterSpeed);
         MonsterList.Add(monster);
+        return monsterObj;
     }
 
     public float getSize(){
