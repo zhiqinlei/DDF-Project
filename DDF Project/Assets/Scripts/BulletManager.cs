@@ -31,6 +31,14 @@ public class BulletManager : MonoBehaviour
 
     void Update()
     {
+        if (gameManager.GameMode == GameManager.Mode.Normal)
+        {
+            NormalGameModeLoop();
+        }
+    }
+
+    private void NormalGameModeLoop()
+    {
         tempShootInterval -= Time.deltaTime;
         if (tempShootInterval <= 0)
         {
@@ -61,17 +69,22 @@ public class BulletManager : MonoBehaviour
         }
     }
 
-    private void Shoot()
+    public GameObject Shoot()
     {
         Vector3 bulletStartPos = new Vector3(
             Random.Range(PositionBotton.transform.position.x, PositionTop.transform.position.x),
             PositionBotton.transform.position.y,
             PositionBotton.transform.position.z);
         
+        return Shoot(bulletStartPos);
+    }
+
+    public GameObject Shoot(Vector3 bulletStartPos)
+    {
         // rotate on y axis -90 faceing left
         GameObject bulletObj = Instantiate(BulletPrefab, bulletStartPos, Quaternion.Euler(90, -90, 0) , BulletGroup.transform);
         BulletController bullet = bulletObj.GetComponent<BulletController>();
         bullet.Initialize(BulletSpeed, BulletExistingTime);
-        
+        return bulletObj;
     }
 }

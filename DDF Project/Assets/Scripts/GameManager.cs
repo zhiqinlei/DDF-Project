@@ -2,11 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using NaughtyAttributes;
 
 public class GameManager : MonoBehaviour
 {
+    public enum Mode {
+        Normal,
+        Tutorial,
+        Test
+    };
     public static GameManager Instance = null;
     public bool DebugMode = true;
+    public bool NotDieMode = false;
+    public Mode GameMode;
+    public Camera MainCamera;
     public PlayerController PlayerController;
     public ShadowController ShadowController;
     public MonsterController MonsterController;
@@ -17,10 +26,11 @@ public class GameManager : MonoBehaviour
     public FuelManager FuelManager;
     public BlockManager BlockManager;
     public HealthBar HealthBar;
-    public Score Score; 
+    public Score Score;
+    [Required] public GameObject Wall;
 
-    public AudioSource Music;
-    public AudioClip MusicEnd;
+    [Required] public AudioSource Music;
+    [Required] public AudioClip MusicEnd;
     
     void Awake()
     {
@@ -35,7 +45,7 @@ public class GameManager : MonoBehaviour
 
         // Dont destroy on reloading the scene
         // DontDestroyOnLoad(gameObject);
-
+        MainCamera = FindObjectOfType<Camera>();
         PlayerController = FindObjectOfType<PlayerController>();
         ShadowController = FindObjectOfType<ShadowController>();
         MonsterController = FindObjectOfType<MonsterController>();
@@ -50,13 +60,15 @@ public class GameManager : MonoBehaviour
         HealthBar = FindObjectOfType<HealthBar>();
         // socre manager
         Score = FindObjectOfType<Score>();
+
+        Music = FindObjectOfType<AudioSource>();
     }
 
     bool gameHasEnded = false;
 
     public float restartDelay = 1f;
 
-    public void EndGame ()
+    public void EndGame()
     {
         if (gameHasEnded == false)
         {   
@@ -68,7 +80,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void Restart ()
+    void Restart()
     {
         SceneManager.LoadScene("EndMenu");
     }

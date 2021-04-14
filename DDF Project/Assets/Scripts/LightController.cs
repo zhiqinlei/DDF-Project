@@ -19,15 +19,25 @@ public class LightController : MonoBehaviour
     public float acceleration;
     public float MaxSpeed; // adjust speed
     public float LevelUpTime;
+    private GameManager gameManager;
 
-    void Update()
+    void Start()
     {
-        LightOff();
+        gameManager = GameManager.Instance;
     }
 
     void FixedUpdate() // light source move
     {
-        if (Score.GetScore() >= 30){
+        if (gameManager.GameMode == GameManager.Mode.Normal)
+        {
+            NormalGameModeLoop();
+        }
+    }
+
+    private void NormalGameModeLoop()
+    {
+        LightOff();
+        if (Score.GetScore() >= 45){
             //sent analyticsResult
             AnalyticsResult analyticsResult = Analytics.CustomEvent(
                 "Light Source: Start Move",
@@ -76,7 +86,8 @@ public class LightController : MonoBehaviour
         lightPoint.range -= LightReduceIndex*Time.deltaTime;
 
         //if (lightPoint.intensity<=0.0){
-        if (lightPoint.range<= 7f){
+        if (lightPoint.range<= 9f){
+            lightPoint.intensity = 0f;
             //sent analyticsResult
             AnalyticsResult analyticsResult = Analytics.CustomEvent(
                 "Game Over: Light off",

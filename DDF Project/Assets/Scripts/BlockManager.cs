@@ -11,18 +11,28 @@ public class BlockManager : MonoBehaviour
     [Required] public GameObject ZRangeMin;
     [Required] public GameObject BlockGroup; 
     [Required] public GameObject BlockPrefab;
-    public float BlockExistingTime = 5.0f;
-    public float BlockGenerateInterval = 20.0f;
+    public float BlockExistingTime;
+    public float BlockGenerateInterval;
     private float tempBlockGenerateInterval;
     public float Size;
     public bool AutoGenerateBlock = true; 
+    private GameManager gameManager;
 
     void Start()
     {
-        tempBlockGenerateInterval = BlockGenerateInterval;
+        gameManager = GameManager.Instance;
+        tempBlockGenerateInterval = BlockGenerateInterval + 10;
     }
 
     void Update()
+    {
+        if (gameManager.GameMode == GameManager.Mode.Normal)
+        {
+            NormalGameModeLoop();
+        }
+    }
+
+    private void NormalGameModeLoop()
     {
         if (AutoGenerateBlock)
         {
@@ -37,8 +47,8 @@ public class BlockManager : MonoBehaviour
 
     public void GenerateBlock()
     {
-        Size = Random.Range(1f, 3.5f);
-        Vector3 randomSize = new Vector3 (Size, 1f, Size);
+        Size = Random.Range(2.5f, 5.5f);
+        Vector3 randomSize = new Vector3 (Size, 1.0f, 0.6f);
         Vector3 startPos = new Vector3(
             Random.Range(XRangeMin.transform.position.x, XRangeMax.transform.position.x),
             BlockGroup.transform.position.y,
