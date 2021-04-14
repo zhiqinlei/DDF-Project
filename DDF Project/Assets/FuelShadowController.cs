@@ -5,9 +5,9 @@ using NaughtyAttributes;
 
 public class FuelShadowController : MonoBehaviour
 {
-    [Required] public FuelController Fuel;
-    [Required] public GameObject LightSourceObj;
-    [Required] public GameObject WallObj;
+    private FuelController Fuel;
+    private GameObject LightSourceObj;
+    private GameObject WallObj;
     private GameManager gameManager;
 
     public void Initialize(FuelController fuel)
@@ -27,6 +27,11 @@ public class FuelShadowController : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        //add fuel attack and defend
+    }
+
     void LateUpdate()
     {
         Vector3 shadowPos = ShadowController.GetShadowPosition(LightSourceObj.transform.position, 
@@ -42,6 +47,25 @@ public class FuelShadowController : MonoBehaviour
         Vector3 rescale = transform.localScale;
         rescale.y = targetHeight * rescale.y / currentHeight;
         rescale.x = targetHeight * rescale.x / currentHeight;
+        
         transform.localScale = rescale;
     }
+
+
+    void OnTriggerEnter(Collider other)
+    {
+        // add shadow attack/shield
+        if (other.gameObject.tag == "Monster")
+        {
+            Debug.Log("Fuel attack");
+            Destroy(other.gameObject);
+        }
+        if (other.gameObject.tag == "Bullet")
+        {
+            Debug.Log("Fuel defend");
+            Destroy(other.gameObject);
+        }
+    }
+
+    
 }
