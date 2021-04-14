@@ -8,18 +8,21 @@ public class Movement : MonoBehaviour
 {
     public CharacterController characterController;
 
-    public float MoveSpeed;
-    public float JumpSpeed;
-    public float RotationSpeed;
-    public float Gravity; // weight
+    
 
+    public float MoveSpeed;
+    public float JumpForce;
+    public float Gravity; // weight
+    private float JumpCD = 0f;
+
+    public float RotationSpeed;
     private Vector3 moveDirection;
     public float turnSmoothTime;
     private float turnSmoothVelocity;
 
     public AudioSource Music;
     public AudioClip MusicJump;
-    private GameManager gameManager;
+    public GameManager gameManager;
     
     void Start()
     {
@@ -32,14 +35,30 @@ public class Movement : MonoBehaviour
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         Vector3 moveDirection = new Vector3(-horizontal, 0f, -vertical).normalized;
-
-        if (characterController.isGrounded && Input.GetButton("Jump"))
+        /*
+        if(characterController.isGrounded && Input.GetButton("Jump"))
         {
-            moveDirection.y = JumpSpeed;
+            rb.AddForce(new Vector3(0,5,0), ForceMode.Impulse);
+        }
+        */
+
+        
+
+        if (characterController.isGrounded && Input.GetButton("Jump") && JumpCD <= 0f)
+        {
+            JumpCD = 550f;
+            moveDirection.y = JumpForce;
             Music.clip = MusicJump;
             Music.Play();
         }
-        moveDirection.y -= Gravity * Time.deltaTime;
+        if (moveDirection.y >= 0)
+        {
+            moveDirection.y -= Gravity * Time.deltaTime;
+        }
+        
+        JumpCD -= 1f;
+
+        
 
         // rotation
         float targetAngle = Mathf.Atan2(moveDirection.x, moveDirection.z) * Mathf.Rad2Deg;

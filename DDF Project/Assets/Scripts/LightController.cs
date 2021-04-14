@@ -37,7 +37,7 @@ public class LightController : MonoBehaviour
     private void NormalGameModeLoop()
     {
         LightOff();
-        if (Score.GetScore() >= 30){
+        if (Score.GetScore() >= 45){
             //sent analyticsResult
             AnalyticsResult analyticsResult = Analytics.CustomEvent(
                 "Light Source: Start Move",
@@ -86,7 +86,8 @@ public class LightController : MonoBehaviour
         lightPoint.range -= LightReduceIndex*Time.deltaTime;
 
         //if (lightPoint.intensity<=0.0){
-        if (lightPoint.range<= 7f){
+        if (lightPoint.range<= 9f){
+            lightPoint.intensity = 0f;
             //sent analyticsResult
             AnalyticsResult analyticsResult = Analytics.CustomEvent(
                 "Game Over: Light off",

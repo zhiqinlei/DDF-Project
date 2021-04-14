@@ -1060,6 +1060,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1503021461}
   m_CullTransparentMesh: 0
+--- !u!114 &1819493172 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4983865374162301450, guid: 049699e9761ca4077a67f5cf8e4fb015,
+    type: 3}
+  m_PrefabInstance: {fileID: 4983865373540093022}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68c86e059db2dfc469387a302588acad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1821784880 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6080464089295992697, guid: 588004f5016eb44af84877b3c5604192,
@@ -1582,7 +1594,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1500956651, guid: 50a700ecdee314011a7c26acc1971139, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.61
+      value: -15.25
       objectReference: {fileID: 0}
     - target: {fileID: 1533407754477055817, guid: 50a700ecdee314011a7c26acc1971139,
         type: 3}
@@ -1703,7 +1715,7 @@ PrefabInstance:
     - target: {fileID: 9032863262577373212, guid: 50a700ecdee314011a7c26acc1971139,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.58
+      value: 8.37
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50a700ecdee314011a7c26acc1971139, type: 3}
@@ -2172,6 +2184,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7346470698485036735, guid: 588004f5016eb44af84877b3c5604192,
         type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7346470698485036735, guid: 588004f5016eb44af84877b3c5604192,
+        type: 3}
       propertyPath: Music
       value: 
       objectReference: {fileID: 1176041049}
@@ -2179,6 +2196,11 @@ PrefabInstance:
         type: 3}
       propertyPath: Gravity
       value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 7346470698485036735, guid: 588004f5016eb44af84877b3c5604192,
+        type: 3}
+      propertyPath: JumpForce
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7346470698485036735, guid: 588004f5016eb44af84877b3c5604192,
         type: 3}
@@ -2190,6 +2212,21 @@ PrefabInstance:
       propertyPath: MusicJump
       value: 
       objectReference: {fileID: 8300000, guid: f62327b09015a95419577b7a3d230203, type: 3}
+    - target: {fileID: 7346470698485036735, guid: 588004f5016eb44af84877b3c5604192,
+        type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1819493172}
+    - target: {fileID: 7346470698485036735, guid: 588004f5016eb44af84877b3c5604192,
+        type: 3}
+      propertyPath: RotationSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7346470698485036735, guid: 588004f5016eb44af84877b3c5604192,
+        type: 3}
+      propertyPath: turnSmoothTime
+      value: 0.001
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 588004f5016eb44af84877b3c5604192, type: 3}
 --- !u!1001 &7671097588714479477
@@ -2433,6 +2470,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.55
       objectReference: {fileID: 0}
+    - target: {fileID: 8793130994563246988, guid: 93435ee550afa4b2d9f750c65628e2fb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 8793130994906373713, guid: 93435ee550afa4b2d9f750c65628e2fb,
         type: 3}
       propertyPath: m_Name
@@ -2495,6 +2537,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8793130994906373715, guid: 93435ee550afa4b2d9f750c65628e2fb,
         type: 3}
+      propertyPath: BulletSpeed
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8793130994906373715, guid: 93435ee550afa4b2d9f750c65628e2fb,
+        type: 3}
       propertyPath: LevelUpTime
       value: 20
       objectReference: {fileID: 0}
@@ -2511,6 +2558,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8793130994906373715, guid: 93435ee550afa4b2d9f750c65628e2fb,
         type: 3}
+      propertyPath: ShootInterval
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8793130994906373715, guid: 93435ee550afa4b2d9f750c65628e2fb,
+        type: 3}
       propertyPath: MaxBulletSpeed
       value: 5.5
       objectReference: {fileID: 0}
@@ -2518,6 +2570,11 @@ PrefabInstance:
         type: 3}
       propertyPath: MinShootInterval
       value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8793130995721264883, guid: 93435ee550afa4b2d9f750c65628e2fb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.68
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93435ee550afa4b2d9f750c65628e2fb, type: 3}

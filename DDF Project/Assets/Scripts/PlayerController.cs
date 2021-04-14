@@ -7,19 +7,19 @@ using NaughtyAttributes;
 
 public class PlayerController : MonoBehaviour
 {
-    public CharacterController characterController;
-    public float MoveSpeed;
-    public float JumpSpeed;
-    public float RotationSpeed;
-    public float GravityValue = -9.81f;
-    private float gravity;
-    private Vector3 moveVector;
-    private Vector3 gravityVector;
-    public float turnSmoothTime;
-    private float turnSmoothVelocity;
+    //public CharacterController characterController;
+    //public float MoveSpeed;
+    //public float JumpSpeed;
+    //public float RotationSpeed;
+    //public float GravityValue = -9.81f;
+    //private float gravity;
+    //private Vector3 moveVector;
+    //private Vector3 gravityVector;
+    //public float turnSmoothTime;
+    //private float turnSmoothVelocity;
 
     public AudioSource Music;
-    public AudioClip MusicJump;
+    //public AudioClip MusicJump;
     public AudioClip MusicRestore;
     public AudioClip MusicDamage;
 
@@ -44,13 +44,14 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    void Update()
-    {
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Vertical");
-        moveVector = new Vector3(-horizontal, 0f, -vertical).normalized;
-    }
+    //void Update()
+    //{
+    //    float horizontal = Input.GetAxisRaw("Horizontal");
+    //    float vertical = Input.GetAxisRaw("Vertical");
+    //    moveVector = new Vector3(-horizontal, 0f, -vertical).normalized;
+    //}
 
+/*
     void FixedUpdate()
     {
         if (characterController.isGrounded && Input.GetButton("Jump"))
@@ -69,6 +70,7 @@ public class PlayerController : MonoBehaviour
         float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
         transform.rotation = Quaternion.Euler(0f, angle, 0f);
     }
+*/
 
 
 //    void OnCollisionEnter(Collision collision)
