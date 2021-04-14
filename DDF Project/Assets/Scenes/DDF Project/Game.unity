@@ -1669,7 +1669,7 @@ PrefabInstance:
     - target: {fileID: 5761517254045667321, guid: 50a700ecdee314011a7c26acc1971139,
         type: 3}
       propertyPath: maxsize
-      value: 2
+      value: 2.2
       objectReference: {fileID: 0}
     - target: {fileID: 5761517254045667321, guid: 50a700ecdee314011a7c26acc1971139,
         type: 3}
@@ -1679,7 +1679,7 @@ PrefabInstance:
     - target: {fileID: 5761517254045667321, guid: 50a700ecdee314011a7c26acc1971139,
         type: 3}
       propertyPath: LevelUpTime
-      value: 20
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5761517254045667321, guid: 50a700ecdee314011a7c26acc1971139,
         type: 3}
@@ -1689,7 +1689,7 @@ PrefabInstance:
     - target: {fileID: 5761517254045667321, guid: 50a700ecdee314011a7c26acc1971139,
         type: 3}
       propertyPath: acceleration
-      value: 0.08
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 5761517254045667321, guid: 50a700ecdee314011a7c26acc1971139,
         type: 3}
@@ -1873,7 +1873,7 @@ PrefabInstance:
     - target: {fileID: 5884029666037751708, guid: bce1d626711dc4df4a016ec686fe2b41,
         type: 3}
       propertyPath: FuelAddIndex
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5884029666037751708, guid: bce1d626711dc4df4a016ec686fe2b41,
         type: 3}
@@ -1888,7 +1888,7 @@ PrefabInstance:
     - target: {fileID: 5884029666037751708, guid: bce1d626711dc4df4a016ec686fe2b41,
         type: 3}
       propertyPath: LightReduceIndex
-      value: 0.15
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 5884029666037751709, guid: bce1d626711dc4df4a016ec686fe2b41,
         type: 3}
@@ -2236,6 +2236,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 331618166, guid: 60decaecb8437423f9fc4e974d1f8e12, type: 3}
+      propertyPath: BlockExistingTime
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 331618166, guid: 60decaecb8437423f9fc4e974d1f8e12, type: 3}
+      propertyPath: BlockGenerateInterval
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 4861549541196084812, guid: 60decaecb8437423f9fc4e974d1f8e12,
         type: 3}
       propertyPath: m_Name
@@ -2344,7 +2352,7 @@ PrefabInstance:
     - target: {fileID: 8672453715893329600, guid: 343c6c68bc58c4b4880e59581a2b504c,
         type: 3}
       propertyPath: FuelExistingTime
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8672453715893329600, guid: 343c6c68bc58c4b4880e59581a2b504c,
         type: 3}
