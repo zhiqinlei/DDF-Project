@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/DDF Project/StartMenu.unity
     guid: a7728af04bcb94d5690e1e4511f3d572
   - enabled: 1
+    path: Assets/Scenes/DDF Project/TutorialLevel.unity
+    guid: 4dd8ef911d16f42318591949142e78db
+  - enabled: 1
     path: Assets/Scenes/DDF Project/Game.unity
     guid: c23278377378b384ab2e247b789e1f6c
   - enabled: 1
