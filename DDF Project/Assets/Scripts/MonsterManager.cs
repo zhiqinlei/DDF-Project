@@ -28,7 +28,8 @@ public class MonsterManager : MonoBehaviour
     private GameManager gameManager;
 
     private float x = 0;  
-    private int dir = 0; 
+    private int dir = 0;
+    private int UpDown = 0; // change the up down of monster 
 
     void Start()
     {
@@ -93,11 +94,13 @@ public class MonsterManager : MonoBehaviour
         {
             x = PositionTop.transform.position.x;
             dir = 0;
+            UpDown = 180;
         }
         else // born left
         {
             x = PositionButton.transform.position.x;
             dir = 180;
+            UpDown = 0;
         }
         Vector3 monsterStartPos = new Vector3(
             x, //randomly choose a start position
@@ -109,7 +112,8 @@ public class MonsterManager : MonoBehaviour
 
     public GameObject Show(float size, Vector3 startPos, float dir)
     {
-        GameObject monsterObj = Instantiate(ShadowMonsterPrefab, startPos, Quaternion.Euler(dir, 90, 0) , MonsterGroup.transform); // randomly choose direction
+        //GameObject monsterObj = Instantiate(ShadowMonsterPrefab, startPos, Quaternion.Euler(dir, 90, 0) , MonsterGroup.transform); // randomly choose direction
+        GameObject monsterObj = Instantiate(ShadowMonsterPrefab, startPos, Quaternion.Euler(dir, 90, UpDown) , MonsterGroup.transform);
         MonsterController monster = monsterObj.GetComponent<MonsterController>();
         monsterObj.transform.localScale = new Vector3 (0, size, size);
         monster.Initialize(MonsterSpeed);

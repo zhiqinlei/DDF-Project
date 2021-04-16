@@ -1592,6 +1592,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1500956650, guid: 50a700ecdee314011a7c26acc1971139, type: 3}
+      propertyPath: m_Name
+      value: Right
+      objectReference: {fileID: 0}
     - target: {fileID: 1500956651, guid: 50a700ecdee314011a7c26acc1971139, type: 3}
       propertyPath: m_LocalPosition.x
       value: -15.25
@@ -1655,6 +1659,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MonsterManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 2762000393127166806, guid: 50a700ecdee314011a7c26acc1971139,
+        type: 3}
+      propertyPath: m_Name
+      value: Left
       objectReference: {fileID: 0}
     - target: {fileID: 5761517254045667321, guid: 50a700ecdee314011a7c26acc1971139,
         type: 3}
