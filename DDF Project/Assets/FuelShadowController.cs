@@ -58,7 +58,17 @@ public class FuelShadowController : MonoBehaviour
         if (other.gameObject.tag == "Monster")
         {
             Debug.Log("Fuel attack");
-            Destroy(other.gameObject);
+            if ( transform.localScale.y <= other.gameObject.transform.localScale.y )
+            {
+                Destroy(other.gameObject);
+                //other.gameObject.transform.localScale /= 2f;
+                Destroy(Fuel);
+            }
+            else
+            {
+                Destroy(other.gameObject);
+            }
+            
         }
         if (other.gameObject.tag == "Bullet")
         {

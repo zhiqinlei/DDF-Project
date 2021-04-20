@@ -2867,7 +2867,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 331618166, guid: 60decaecb8437423f9fc4e974d1f8e12, type: 3}
       propertyPath: BlockExistingTime
-      value: 7
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 331618166, guid: 60decaecb8437423f9fc4e974d1f8e12, type: 3}
       propertyPath: BlockGenerateInterval
