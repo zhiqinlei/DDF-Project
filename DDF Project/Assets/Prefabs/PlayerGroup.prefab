@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1737864840
+--- !u!1 &1634928810538930045
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,59 +8,28 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1737864841}
-  - component: {fileID: 1737864843}
-  - component: {fileID: 1737864842}
+  - component: {fileID: 6239524506483717038}
   m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Holder
+  m_Name: ObjectHolder
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1737864841
+--- !u!4 &6239524506483717038
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1737864840}
+  m_GameObject: {fileID: 1634928810538930045}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.19, z: 0.02}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalPosition: {x: 0, y: 0.406, z: 0.55}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6080464089295992697}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1737864843
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1737864840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a4f3093455dbdf428dd68f95e0c3394, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObjectHolder: {fileID: 1737864841}
-  ThrowForce: 500
-  IsThrowable: 0
-  MusicThrow: {fileID: 8300000, guid: 538d669c3ac982f41b477e5e7a3e955e, type: 3}
---- !u!65 &1737864842
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1737864840}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4001445896835740004
 GameObject:
   m_ObjectHideFlags: 0
@@ -278,7 +247,7 @@ Transform:
   - {fileID: 1483520448371003996}
   - {fileID: 6080464088834122879}
   - {fileID: 6080464090669968191}
-  - {fileID: 1737864841}
+  - {fileID: 6239524506483717038}
   m_Father: {fileID: 754153064629693449}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -359,6 +328,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615ddf8716458024eb0a228e4e2a698b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ObjectHolder: {fileID: 6239524506483717038}
+  ThrowForce: 500
+  hasFuel: 0
+  carriedFuelObj: {fileID: 0}
+  MusicThrow: {fileID: 8300000, guid: 538d669c3ac982f41b477e5e7a3e955e, type: 3}
   Music: {fileID: 0}
   MusicRestore: {fileID: 8300000, guid: 1c33ee4bedbcd744a9a2e1935f548bb4, type: 3}
   MusicDamage: {fileID: 8300000, guid: cf6a68477fa97044d9375657d50bb992, type: 3}

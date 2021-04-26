@@ -60,13 +60,13 @@ public class FuelManager : MonoBehaviour
         return GenerateFuel(startPos);
     }
 
-    public GameObject GenerateFuel(Vector3 startPos)
+    public GameObject GenerateFuel(Vector3 startPos, bool alwaysExist=false)
     {
         GameObject fuelObj = Instantiate(FuelPrefab, startPos, Quaternion.identity, FuelGroup.transform);
         FuelController fuel = fuelObj.GetComponent<FuelController>();
         GameObject fuelShadowObj = Instantiate(FuelShadowPrefab, FuelShadowGroup.transform);
         FuelShadowController shadow = fuelShadowObj.GetComponent<FuelShadowController>();
-        fuel.Initialize(FuelExistingTime, shadow);
+        fuel.Initialize(FuelExistingTime, shadow, alwaysExist:alwaysExist);
         shadow.Initialize(fuel);
         return fuelObj;
     }
