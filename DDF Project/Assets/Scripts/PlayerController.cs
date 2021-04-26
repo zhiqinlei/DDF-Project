@@ -120,6 +120,7 @@ public class PlayerController : MonoBehaviour
             carriedFuelObj.GetComponent<Rigidbody>().isKinematic = false;
             carriedFuelObj.GetComponent<Rigidbody>().useGravity = true;
             carriedFuelObj.GetComponent<Rigidbody>().AddForce(transform.forward * ThrowForce);
+            carriedFuelObj = null;
             hasFuel = false;
         }
         else
