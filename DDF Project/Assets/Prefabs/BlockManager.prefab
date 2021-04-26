@@ -146,8 +146,8 @@ MonoBehaviour:
   BlockGroup: {fileID: 2552937980485806369}
   BlockPrefab: {fileID: 3399104368093805537, guid: 1dd663ef2439046c592ddc1af5a8e94f,
     type: 3}
-  BlockExistingTime: 5
-  BlockGenerateInterval: 5
+  BlockExistingTime: 10
+  BlockGenerateInterval: 15
   Size: 0
   AutoGenerateBlock: 1
 --- !u!1 &8293432467397893649

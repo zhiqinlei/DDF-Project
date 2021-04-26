@@ -19,7 +19,6 @@ public class FuelController : MonoBehaviour
         m_ExistingTime -= Time.deltaTime;
         if (m_ExistingTime <= 0.0f)
         {
-            Destroy(Shadow.gameObject);
             Destroy(gameObject);
         }
     }

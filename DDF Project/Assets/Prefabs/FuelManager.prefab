@@ -146,7 +146,7 @@ MonoBehaviour:
   FuelShadowGroup: {fileID: 4248609237780865212}
   FuelShadowPrefab: {fileID: 1224977290705142643, guid: 4afa18df3157d4ef49e5e978a580bf55,
     type: 3}
-  FuelExistingTime: 10
+  FuelExistingTime: 9
   FuelGenerateInterval: 7
   AutoGenerateFuel: 1
 --- !u!1 &8672453716400302806

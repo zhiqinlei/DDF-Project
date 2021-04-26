@@ -61,7 +61,7 @@ public class GameManager : MonoBehaviour
         // socre manager
         Score = FindObjectOfType<Score>();
 
-        Music = FindObjectOfType<AudioSource>();
+        // Music = FindObjectOfType<AudioSource>();
     }
 
     bool gameHasEnded = false;
