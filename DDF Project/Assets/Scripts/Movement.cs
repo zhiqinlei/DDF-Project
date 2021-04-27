@@ -31,7 +31,7 @@ public class Movement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
@@ -47,7 +47,7 @@ public class Movement : MonoBehaviour
 
         if (characterController.isGrounded && Input.GetButton("Jump") && JumpCD <= 0f)
         {
-            JumpCD = 550f;
+            JumpCD = 0.5f;
             moveDirection.y = JumpForce;
             Music.clip = MusicJump;
             Music.Play();
@@ -57,7 +57,7 @@ public class Movement : MonoBehaviour
             moveDirection.y -= Gravity * Time.deltaTime;
         }
         
-        JumpCD -= 1f;
+        JumpCD -= Time.deltaTime;
 
         
 
