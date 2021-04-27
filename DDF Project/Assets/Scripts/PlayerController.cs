@@ -18,10 +18,17 @@ public class PlayerController : MonoBehaviour
     //public float turnSmoothTime;
     //private float turnSmoothVelocity;
 
+    // puckup params
+    [Required] public Transform ObjectHolder;
+    public float ThrowForce;
+    [ReadOnly] public bool hasFuel;
+    [ReadOnly] public GameObject carriedFuelObj;
+    private GameObject LightSource;
+    [Required] public AudioClip MusicThrow;
     public AudioSource Music;
     //public AudioClip MusicJump;
-    public AudioClip MusicRestore;
-    public AudioClip MusicDamage;
+    [Required] public AudioClip MusicRestore;
+    [Required] public AudioClip MusicDamage;
 
     [ReadOnly] public float Height;
     public int StartHealth = 4;
@@ -41,15 +48,29 @@ public class PlayerController : MonoBehaviour
 
         Height = GetComponent<Renderer>().bounds.size.y;
         Music = gameManager.Music;
-        
+
+        LightSource = gameManager.LightController.LightPosition;
     }
 
-    //void Update()
-    //{
+    void Update()
+    {
     //    float horizontal = Input.GetAxisRaw("Horizontal");
     //    float vertical = Input.GetAxisRaw("Vertical");
     //    moveVector = new Vector3(-horizontal, 0f, -vertical).normalized;
-    //}
+
+        if (carriedFuelObj)
+        {
+            hasFuel = true;
+        }
+        else
+        {
+            hasFuel = false;
+        }
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            PickUpThrow();
+        }
+    }
 
 /*
     void FixedUpdate()
@@ -88,6 +109,42 @@ public class PlayerController : MonoBehaviour
  //           Destroy(collision.gameObject);
   //      }
     //}
+
+    private void PickUpThrow()
+    {
+        if (hasFuel)
+        {
+            Music.clip = MusicThrow;
+            Music.Play();
+            ObjectHolder.DetachChildren();
+            carriedFuelObj.GetComponent<Rigidbody>().isKinematic = false;
+            carriedFuelObj.GetComponent<Rigidbody>().useGravity = true;
+            carriedFuelObj.GetComponent<Rigidbody>().AddForce(transform.forward * ThrowForce);
+            carriedFuelObj = null;
+            hasFuel = false;
+        }
+        else
+        {
+            GameObject[] Items = GameObject.FindGameObjectsWithTag("Fuel");
+            foreach (GameObject item in Items)
+            {
+                if (!hasFuel)
+                {
+                    float d = Vector3.Distance(item.transform.position, transform.position);
+                    if (d < 1.5f)
+                    {
+                        item.GetComponent<FuelController>().AlwaysExist = true;
+                        item.GetComponent<FuelController>().holder = this;
+                        carriedFuelObj = item;
+                        hasFuel = true;
+                        item.transform.position = ObjectHolder.transform.position;
+                        item.transform.SetParent(ObjectHolder);
+                        item.GetComponent<Rigidbody>().isKinematic = true;
+                    }
+                }
+            }
+        }
+    }
 
     public void ReduceHealth(int value=1)
     {

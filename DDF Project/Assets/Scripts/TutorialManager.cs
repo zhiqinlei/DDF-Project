@@ -82,6 +82,11 @@ public class TutorialManager : MonoBehaviour
                 
                 if (Input.GetButtonDown("Submit"))
                 {
+                    if (monsterObj)
+                    {
+                        monsterObj.GetComponent<MonsterController>().ResumeMovement();
+                        AvoidShadowText.SetActive(false);
+                    }
                     SetTutorialState(State.PickFuel);
                 }
                 break;
@@ -153,7 +158,8 @@ public class TutorialManager : MonoBehaviour
                 BulletController bullet = bulletObj.GetComponent<BulletController>();
                 bullet.Initialize(1f, 100);
 
-                StartCoroutine(PauseBulletAfterTime(3));
+                // pause bullet after some time
+                StartCoroutine(PauseBulletAfterTime(5));
                 break;
             case State.AvoidShadowMonster:
                 Debug.Log("Enter avoid shadow");
@@ -166,6 +172,9 @@ public class TutorialManager : MonoBehaviour
                         gameManager.MonsterManager.PositionButton.transform.position.y - (float) 1.25 + 1,
                         gameManager.MonsterManager.PositionButton.transform.position.z),
                     0);
+
+                // pause monster after some time
+                StartCoroutine(PauseMonsterAfterTime(5));
                 break;
             case State.PickFuel:
                 Debug.Log("Enter pick up fuel");
@@ -178,7 +187,7 @@ public class TutorialManager : MonoBehaviour
                     fuelManager.FuelGroup.transform.position.y,
                     (fuelManager.ZRangeMin.transform.position.z + fuelManager.ZRangeMax.transform.position.z)/2
                 );
-                fuelObj = fuelManager.GenerateFuel(startPos);
+                fuelObj = fuelManager.GenerateFuel(startPos, alwaysExist:true);
                 break;
         }
     }
@@ -196,5 +205,25 @@ public class TutorialManager : MonoBehaviour
         yield return new WaitForSeconds(time);
 
         Destroy(bulletObj);
+    }
+
+    IEnumerator PauseMonsterAfterTime(float time)
+    {
+        yield return new WaitForSeconds(time);
+
+        if (monsterObj)
+        {
+            monsterObj.GetComponent<MonsterController>().PauseMovement();
+        }
+    }
+
+    IEnumerator DestroyMonsterAfterTime(float time)
+    {
+        yield return new WaitForSeconds(time);
+
+        if (monsterObj)
+        {
+            Destroy(monsterObj);
+        }
     }
 }

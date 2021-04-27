@@ -26,6 +26,7 @@ public class Movement : MonoBehaviour
     
     void Start()
     {
+        gameManager = GameManager.Instance;
         Music = gameManager.Music;
     }
 

@@ -6,6 +6,7 @@ using NaughtyAttributes;
 public class MonsterController : MonoBehaviour
 {
     private float m_Speed;
+    public float tempSpeed;
 
     public void Initialize(float speed)
     {
@@ -16,5 +17,16 @@ public class MonsterController : MonoBehaviour
     {
         Vector3 moveDirection = transform.forward;
         transform.position += moveDirection * m_Speed * Time.deltaTime;
+    }
+
+    public void PauseMovement()
+    {
+        tempSpeed = m_Speed;
+        m_Speed = 0;
+    }
+
+    public void ResumeMovement()
+    {
+        m_Speed = tempSpeed;
     }
 }
