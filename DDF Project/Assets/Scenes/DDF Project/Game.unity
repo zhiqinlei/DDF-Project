@@ -2414,6 +2414,16 @@ PrefabInstance:
       objectReference: {fileID: 1176041049}
     - target: {fileID: 7346470698485036735, guid: 588004f5016eb44af84877b3c5604192,
         type: 3}
+      propertyPath: Gravity
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7346470698485036735, guid: 588004f5016eb44af84877b3c5604192,
+        type: 3}
+      propertyPath: JumpForce
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7346470698485036735, guid: 588004f5016eb44af84877b3c5604192,
+        type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1819493172}
