@@ -14,7 +14,14 @@ public class BlockManager : MonoBehaviour
     public float BlockExistingTime;
     public float BlockGenerateInterval;
     private float tempBlockGenerateInterval;
-    public float Size;
+    public float maxSize;
+    public float minSize;
+
+    private float Size;
+
+    public float LevelUpTime;
+
+    private float LevelTime = 30f;
     public bool AutoGenerateBlock = true; 
     private GameManager gameManager;
 
@@ -29,6 +36,12 @@ public class BlockManager : MonoBehaviour
         if (gameManager.GameMode == GameManager.Mode.Normal)
         {
             NormalGameModeLoop();
+        }
+
+        if(Score.GetScore() == LevelTime && minSize <= maxSize) // enlarge the block
+        {
+            minSize += 0.8f;
+            LevelTime += LevelUpTime;
         }
     }
 
@@ -47,7 +60,7 @@ public class BlockManager : MonoBehaviour
 
     public void GenerateBlock()
     {
-        Size = Random.Range(2.5f, 5.5f);
+        Size = Random.Range(minSize, minSize+3f);
         Vector3 randomSize = new Vector3 (Size, 1.0f, 0.6f);
         Vector3 startPos = new Vector3(
             Random.Range(XRangeMin.transform.position.x, XRangeMax.transform.position.x),

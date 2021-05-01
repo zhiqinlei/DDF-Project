@@ -39,7 +39,7 @@ public class FuelShadowController : MonoBehaviour
         Vector3 shadowPos = ShadowController.GetShadowPosition(LightSourceObj.transform.position, 
             Fuel.gameObject.transform.position,
             WallObj.transform.position);
-        transform.position = shadowPos;
+        transform.position = shadowPos; 
         float targetHeight = ShadowController.GetShadowHeight(LightSourceObj.transform.position, 
             Fuel.gameObject.transform.position,
             WallObj.transform.position,
@@ -56,7 +56,7 @@ public class FuelShadowController : MonoBehaviour
     bool GroundCheck()
     {
         RaycastHit hit;
-	    float distance = 0.5f;
+	    float distance = 0.3f;
 	    Vector3 dir = new Vector3(0, -1);
 
         if(Physics.Raycast(Fuel.transform.position, dir, out hit, distance))
