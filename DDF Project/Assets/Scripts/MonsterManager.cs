@@ -17,11 +17,13 @@ public class MonsterManager : MonoBehaviour
     public float MonsterSpeed = 4.0f;
     public float MaxMonsterSpeed;
 
-    public float Size;
+    private float Size;
     public float maxsize = 2.5f;
     public float minsize = 1f;
 
     public float acceleration;
+
+    private float LevelTime = 20f;
     public float LevelUpTime;
 
     [SerializeField] private List<MonsterController> MonsterList;
@@ -58,7 +60,7 @@ public class MonsterManager : MonoBehaviour
         }
 
         // upgrade monster speed and size and reduce interval when level up
-        if (Score.GetScore() == LevelUpTime){
+        if (Score.GetScore() == LevelTime){
             if (Mathf.Abs(ShowInterval) >= MinShowInterval){
                 ShowInterval -= acceleration*ShowInterval;
             }
@@ -81,7 +83,7 @@ public class MonsterManager : MonoBehaviour
             Debug.Log("analyticsResult: " + analyticsResult);
             Debug.Log("Monster upgrade");
 
-            LevelUpTime += LevelUpTime;
+            LevelTime += LevelUpTime;
 
         }
     }

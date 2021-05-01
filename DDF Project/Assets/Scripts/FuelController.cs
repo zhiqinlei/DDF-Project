@@ -27,7 +27,7 @@ public class FuelController : MonoBehaviour
 
     void Update()
     {
-        if (!AlwaysExist)
+        if (gameManager.GameMode != GameManager.Mode.Tutorial || !AlwaysExist)
         {
             m_ExistingTime -= Time.deltaTime;
             if (m_ExistingTime <= 0.0f)

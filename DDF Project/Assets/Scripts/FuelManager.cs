@@ -13,16 +13,16 @@ public class FuelManager : MonoBehaviour
     [Required] public GameObject FuelPrefab;
     [Required] public GameObject FuelShadowGroup;
     [Required] public GameObject FuelShadowPrefab;
-    public float FuelExistingTime = 4.0f;
-    public float FuelGenerateInterval = 5.0f; // every certain seconds, generate a fuel
+    public float FuelExistingTime;
+    public float FuelGenerateInterval; // every certain seconds, generate a fuel
+    public float LevelUpTime; // reduce the fuelgenerateInterval while level up
+    private float LevelTime = 45f;
     private float tempFuelGenerateInterval;
     public bool AutoGenerateFuel = true; // turn off if want to use other things to trigger generating action
     private GameManager gameManager;
 
     void Start()
     {
-        // add a fuel at the beginning 
-        //GenerateFuel();
         gameManager = GameManager.Instance;
         tempFuelGenerateInterval = FuelGenerateInterval;
     }
@@ -45,7 +45,12 @@ public class FuelManager : MonoBehaviour
             {
                 GenerateFuel();
                 
+                if (Score.GetScore() >= LevelTime && FuelGenerateInterval >= 0f)
+                {
+                    FuelGenerateInterval -= 1f;
+                }
                 tempFuelGenerateInterval = FuelGenerateInterval;
+                LevelTime += LevelUpTime;
             }
         }
     }

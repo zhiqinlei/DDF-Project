@@ -20,6 +20,11 @@ public class BulletManager : MonoBehaviour
     public float acceleration;
     public float LevelUpTime;
 
+    private float LevelTime = 30f;
+
+    public float BulletRain;
+    private float tempInterval;
+
     public float BulletExistingTime = 6.0f; // bullte will be destroied after certain seconds
     private GameManager gameManager;
 
@@ -37,6 +42,14 @@ public class BulletManager : MonoBehaviour
         }
     }
 
+    void FixedUpdate()
+    {
+        if(Score.GetScore() == BulletRain) // bullet rain event
+        {
+            Shoot();
+        }
+    }
+
     private void NormalGameModeLoop()
     {
         tempShootInterval -= Time.deltaTime;
@@ -46,7 +59,7 @@ public class BulletManager : MonoBehaviour
             tempShootInterval = ShootInterval;
         }
         // reduce bullet shoot interval is Level UP until reach the min interval
-        if (Score.GetScore() == LevelUpTime){
+        if (Score.GetScore() == LevelTime){
             if (Mathf.Abs(ShootInterval) >= MinShootInterval){
                 ShootInterval -= acceleration*ShootInterval;
             }
@@ -64,9 +77,10 @@ public class BulletManager : MonoBehaviour
             Debug.Log("analyticsResult: " + analyticsResult);
             Debug.Log("Bullet accelerate");
 
-            LevelUpTime += LevelUpTime;
+            LevelTime += LevelUpTime;
 
         }
+
     }
 
     public GameObject Shoot()

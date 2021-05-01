@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.3587269, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2150,6 +2150,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: MonsterManager
       objectReference: {fileID: 0}
+    - target: {fileID: 5761517254045667321, guid: 50a700ecdee314011a7c26acc1971139,
+        type: 3}
+      propertyPath: maxsize
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5761517254045667321, guid: 50a700ecdee314011a7c26acc1971139,
+        type: 3}
+      propertyPath: LevelUpTime
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5761517254045667321, guid: 50a700ecdee314011a7c26acc1971139,
+        type: 3}
+      propertyPath: ShowInterval
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5761517254045667321, guid: 50a700ecdee314011a7c26acc1971139,
+        type: 3}
+      propertyPath: acceleration
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5761517254045667321, guid: 50a700ecdee314011a7c26acc1971139,
+        type: 3}
+      propertyPath: MaxMonsterSpeed
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50a700ecdee314011a7c26acc1971139, type: 3}
 --- !u!1001 &4983865373540093022
@@ -2372,6 +2397,11 @@ PrefabInstance:
       propertyPath: Music
       value: 
       objectReference: {fileID: 1176041049}
+    - target: {fileID: 6080464089511710321, guid: 588004f5016eb44af84877b3c5604192,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.62
+      objectReference: {fileID: 0}
     - target: {fileID: 6080464089511710327, guid: 588004f5016eb44af84877b3c5604192,
         type: 3}
       propertyPath: WallObj
@@ -2382,31 +2412,6 @@ PrefabInstance:
       propertyPath: LightSourceObj
       value: 
       objectReference: {fileID: 596748634}
-    - target: {fileID: 6239524506483717038, guid: 588004f5016eb44af84877b3c5604192,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6239524506483717038, guid: 588004f5016eb44af84877b3c5604192,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6239524506483717038, guid: 588004f5016eb44af84877b3c5604192,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6239524506483717038, guid: 588004f5016eb44af84877b3c5604192,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.19
-      objectReference: {fileID: 0}
-    - target: {fileID: 6239524506483717038, guid: 588004f5016eb44af84877b3c5604192,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.02
-      objectReference: {fileID: 0}
     - target: {fileID: 7346470698485036735, guid: 588004f5016eb44af84877b3c5604192,
         type: 3}
       propertyPath: Music
@@ -2414,13 +2419,8 @@ PrefabInstance:
       objectReference: {fileID: 1176041049}
     - target: {fileID: 7346470698485036735, guid: 588004f5016eb44af84877b3c5604192,
         type: 3}
-      propertyPath: Gravity
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 7346470698485036735, guid: 588004f5016eb44af84877b3c5604192,
-        type: 3}
-      propertyPath: JumpForce
-      value: 20
+      propertyPath: MoveSpeed
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 7346470698485036735, guid: 588004f5016eb44af84877b3c5604192,
         type: 3}
@@ -2436,15 +2436,27 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4557650949992289229, guid: 60decaecb8437423f9fc4e974d1f8e12,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.65
+    - target: {fileID: 331618166, guid: 60decaecb8437423f9fc4e974d1f8e12, type: 3}
+      propertyPath: maxSize
+      value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 4914849054733398812, guid: 60decaecb8437423f9fc4e974d1f8e12,
+    - target: {fileID: 331618166, guid: 60decaecb8437423f9fc4e974d1f8e12, type: 3}
+      propertyPath: minSize
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 331618166, guid: 60decaecb8437423f9fc4e974d1f8e12, type: 3}
+      propertyPath: LevelUpTime
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 1200420382757874829, guid: 60decaecb8437423f9fc4e974d1f8e12,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.08
+      value: -5.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 4744489642434777858, guid: 60decaecb8437423f9fc4e974d1f8e12,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.6
       objectReference: {fileID: 0}
     - target: {fileID: 5878663593792209937, guid: 60decaecb8437423f9fc4e974d1f8e12,
         type: 3}
@@ -2501,40 +2513,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6903084846815767102, guid: 60decaecb8437423f9fc4e974d1f8e12,
-        type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000,
-        type: 0}
     - target: {fileID: 7552920130967370524, guid: 60decaecb8437423f9fc4e974d1f8e12,
         type: 3}
       propertyPath: m_Name
       value: BlockManager
       objectReference: {fileID: 0}
-    - target: {fileID: 7864505593477089046, guid: 60decaecb8437423f9fc4e974d1f8e12,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 7.27
-      objectReference: {fileID: 0}
-    - target: {fileID: 8293432467397893649, guid: 60decaecb8437423f9fc4e974d1f8e12,
-        type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000,
-        type: 0}
-    - target: {fileID: 8923460785266032912, guid: 60decaecb8437423f9fc4e974d1f8e12,
-        type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000,
-        type: 0}
-    - target: {fileID: 9124247865125770323, guid: 60decaecb8437423f9fc4e974d1f8e12,
-        type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000,
-        type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60decaecb8437423f9fc4e974d1f8e12, type: 3}
 --- !u!1001 &8672453715122172018
@@ -2544,10 +2527,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8672453715856458494, guid: 343c6c68bc58c4b4880e59581a2b504c,
+    - target: {fileID: 8672453715893329600, guid: 343c6c68bc58c4b4880e59581a2b504c,
         type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -2.55
+      propertyPath: LevelUpTime
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 8672453715893329601, guid: 343c6c68bc58c4b4880e59581a2b504c,
         type: 3}
@@ -2608,6 +2591,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FuelManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8672453716702229001, guid: 343c6c68bc58c4b4880e59581a2b504c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8672453716938522491, guid: 343c6c68bc58c4b4880e59581a2b504c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 343c6c68bc58c4b4880e59581a2b504c, type: 3}
@@ -2677,6 +2670,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8793130994906373715, guid: 93435ee550afa4b2d9f750c65628e2fb,
+        type: 3}
+      propertyPath: BulletRain
+      value: 134
+      objectReference: {fileID: 0}
+    - target: {fileID: 8793130994906373715, guid: 93435ee550afa4b2d9f750c65628e2fb,
+        type: 3}
+      propertyPath: BulletSpeed
+      value: 2.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8793130994906373715, guid: 93435ee550afa4b2d9f750c65628e2fb,
+        type: 3}
+      propertyPath: LevelUpTime
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8793130994906373715, guid: 93435ee550afa4b2d9f750c65628e2fb,
+        type: 3}
+      propertyPath: acceleration
+      value: 0.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 8793130994906373715, guid: 93435ee550afa4b2d9f750c65628e2fb,
+        type: 3}
+      propertyPath: ShootInterval
+      value: 1.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93435ee550afa4b2d9f750c65628e2fb, type: 3}

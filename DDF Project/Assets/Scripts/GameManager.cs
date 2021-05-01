@@ -66,7 +66,7 @@ public class GameManager : MonoBehaviour
 
     bool gameHasEnded = false;
 
-    public float restartDelay = 1f;
+    public float restartDelay = 0.3f;
 
     public void EndGame()
     {
