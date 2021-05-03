@@ -1681,6 +1681,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2087298028}
     m_Modifications:
+    - target: {fileID: 1716242641, guid: 10387e3ac135446e5919698ae677d8f9, type: 3}
+      propertyPath: m_Text
+      value: 'Press "left shift" to pick up the fuel and throw it to fire
+
+        This
+        will keep the fire on
+
+        "Enter" to continue'
+      objectReference: {fileID: 0}
     - target: {fileID: 6013237489874145622, guid: 10387e3ac135446e5919698ae677d8f9,
         type: 3}
       propertyPath: m_Pivot.x
